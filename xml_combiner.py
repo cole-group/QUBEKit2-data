@@ -8,6 +8,8 @@ import os
 from xml.dom.minidom import parseString
 import xml.etree.ElementTree as ET
 
+import networkx as nx
+
 
 """
 Add QUBEKit folders (QUBEKit_name_date_log) to wherever this script is being run from.
@@ -48,8 +50,8 @@ class ParseXML:
 
         self.xmls = dict()
         self.ddec_data = dict()
-        self.find_xmls_and_ddec_data()
 
+        self.find_xmls_and_ddec_data()
         self.combine_molecules()
 
     def find_xmls_and_ddec_data(self):
@@ -115,6 +117,11 @@ class ParseXML:
         raise_by = 0
 
         for mol_name, xmlclass in self.xmls.items():
+
+            # Used to find polar Hs
+            topology = nx.Graph()
+            atoms = dict()
+
             root = xmlclass.getroot()
             if root.tag != 'ForceField':
                 raise RuntimeError('Not a proper forcefield file.')
@@ -123,6 +130,7 @@ class ParseXML:
             for child in root:
                 if child.tag == 'AtomTypes':
                     for i, atom in enumerate(child):
+                        atoms[str(i)] = atom.get('element')
                         ET.SubElement(AtomTypes, 'Type', attrib={
                             'class': self.increment_str(atom.get('class'), increment),
                             'element': atom.get('element'),
@@ -145,6 +153,9 @@ class ParseXML:
                                     'from': atom_or_bond.get('from'),
                                     'to': atom_or_bond.get('to'),
                                 })
+                                topology.add_node(atom_or_bond.get('from'))
+                                topology.add_node(atom_or_bond.get('to'))
+                                topology.add_edge(atom_or_bond.get('from'), atom_or_bond.get('to'))
 
                 elif child.tag == 'HarmonicBondForce':
                     for force in child:
@@ -189,13 +200,15 @@ class ParseXML:
 
                 elif child.tag == 'NonbondedForce':
                     for atom_index, force in enumerate(child):
+                        typ = force.get('type').split('_')[1]
                         atomic_symbol = self.ddec_data[mol_name][atom_index].atomic_symbol
-                        if force.get('epsilon') == 0:
-                            ele = 'X'
-                            free = 'hpol'
-                        else:
-                            ele = atomic_symbol
-                            free = atomic_symbol.lower()
+                        ele = atomic_symbol
+                        free = atomic_symbol.lower()
+                        if atoms[typ] == 'H':
+                            for bonded in topology.neighbors(typ):
+                                if atoms[bonded] in ['O', 'N', 'S']:
+                                    ele = 'X'
+                                    free = 'hpol'
                         vol = self.ddec_data[mol_name][atom_index].volume
                         bfree = self.elem_dict[atomic_symbol].bfree
                         vfree = self.elem_dict[atomic_symbol].vfree
