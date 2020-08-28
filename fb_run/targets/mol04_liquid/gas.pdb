@@ -1,5 +1,5 @@
-REMARK   1 CREATED WITH QUBEKit 2020-08-03 23:15:38.859055
-COMPND    mol4                
+REMARK   1 CREATED WITH QUBEKit 2020-08-25 13:47:52.188492
+COMPND    mol04               
 HETATM    1  C0  UNL     1      -2.502   0.272  -0.052  1.00  0.00           C
 HETATM    2  O1  UNL     1      -1.254   0.744  -0.444  1.00  0.00           O
 HETATM    3  C2  UNL     1      -0.242  -0.139  -0.092  1.00  0.00           C

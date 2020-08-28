@@ -1,0 +1,150 @@
+$options
+forcefield combined.xml
+jobtype newton
+trust0 0.3
+penalty_type L2
+penalty_additive 1.0
+print_gradient 1
+print_hessian 0
+print_parameters 1
+error_tolerance 1.0
+mintrust 0.5
+convergence_gradient 0.001
+convergence_objective 0.5
+convergence_step 0.005
+$end
+
+$target
+type Liquid_OpenMM
+name mol01_liquid
+liquid_eq_steps 50000
+liquid_md_steps 500000
+liquid_timestep 1.0
+liquid_interval 1.0
+$end
+
+$target
+type Liquid_OpenMM
+name mol02_liquid
+liquid_eq_steps 50000
+liquid_md_steps 500000
+liquid_timestep 1.0
+liquid_interval 1.0
+$end
+
+$target
+type Liquid_OpenMM
+name mol03_liquid
+liquid_eq_steps 50000
+liquid_md_steps 500000
+liquid_timestep 1.0
+liquid_interval 1.0
+$end
+
+$target
+type Liquid_OpenMM
+name mol04_liquid
+liquid_eq_steps 50000
+liquid_md_steps 500000
+liquid_timestep 1.0
+liquid_interval 1.0
+$end
+
+$target
+type Liquid_OpenMM
+name mol05_liquid
+liquid_eq_steps 50000
+liquid_md_steps 500000
+liquid_timestep 1.0
+liquid_interval 1.0
+$end
+
+$target
+type Liquid_OpenMM
+name mol06_liquid
+liquid_eq_steps 50000
+liquid_md_steps 500000
+liquid_timestep 1.0
+liquid_interval 1.0
+$end
+
+$target
+type Liquid_OpenMM
+name mol07_liquid
+liquid_eq_steps 50000
+liquid_md_steps 500000
+liquid_timestep 1.0
+liquid_interval 1.0
+$end
+
+$target
+type Liquid_OpenMM
+name mol08_liquid
+liquid_eq_steps 50000
+liquid_md_steps 500000
+liquid_timestep 1.0
+liquid_interval 1.0
+$end
+
+$target
+type Liquid_OpenMM
+name mol09_liquid
+liquid_eq_steps 50000
+liquid_md_steps 500000
+liquid_timestep 1.0
+liquid_interval 1.0
+$end
+
+$target
+type Liquid_OpenMM
+name mol10_liquid
+liquid_eq_steps 50000
+liquid_md_steps 500000
+liquid_timestep 1.0
+liquid_interval 1.0
+$end
+
+$target
+type Liquid_OpenMM
+name mol11_liquid
+liquid_eq_steps 50000
+liquid_md_steps 500000
+liquid_timestep 1.0
+liquid_interval 1.0
+$end
+
+$target
+type Liquid_OpenMM
+name mol12_liquid
+liquid_eq_steps 50000
+liquid_md_steps 500000
+liquid_timestep 1.0
+liquid_interval 1.0
+$end
+
+$target
+type Liquid_OpenMM
+name mol13_liquid
+liquid_eq_steps 50000
+liquid_md_steps 500000
+liquid_timestep 1.0
+liquid_interval 1.0
+$end
+
+$target
+type Liquid_OpenMM
+name mol14_liquid
+liquid_eq_steps 50000
+liquid_md_steps 500000
+liquid_timestep 1.0
+liquid_interval 1.0
+$end
+
+$target
+type Liquid_OpenMM
+name mol15_liquid
+liquid_eq_steps 50000
+liquid_md_steps 500000
+liquid_timestep 1.0
+liquid_interval 1.0
+$end
