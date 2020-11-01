@@ -1,0 +1,79 @@
+#===================================================================================#
+#|                          Objective Function Breakdown                           |#
+#|   Target Name              Residual  x  Weight  =  Contribution (Current-Prev)  |#
+#===================================================================================#
+mol01_liquid                   8.51267      0.067      5.67511e-01 ( +4.885e-02 )
+mol02_liquid                   1.63295      0.067      1.08864e-01 ( +4.866e-02 )
+mol03_liquid                   5.25469      0.067      3.50313e-01 ( -9.333e-04 )
+mol04_liquid                   2.56887      0.067      1.71258e-01 ( -6.453e-02 )
+mol05_liquid                   0.37337      0.067      2.48911e-02 ( -2.496e-03 )
+mol06_liquid                   0.44919      0.067      2.99461e-02 ( -2.709e-02 )
+mol07_liquid                   1.02438      0.067      6.82919e-02 ( +5.404e-02 )
+mol08_liquid                   0.45703      0.067      3.04690e-02 ( -3.446e-01 )
+mol09_liquid                   1.04904      0.067      6.99360e-02 ( -2.679e-03 )
+mol10_liquid                   2.88625      0.067      1.92417e-01 ( +1.771e-02 )
+mol11_liquid                   9.59299      0.067      6.39532e-01 ( +3.433e-01 )
+mol12_liquid                   0.24493      0.067      1.63285e-02 ( -9.169e-02 )
+mol13_liquid                   1.66250      0.067      1.10833e-01 ( +2.253e-02 )
+mol14_liquid                   5.59475      0.067      3.72983e-01 ( -6.910e-02 )
+mol15_liquid                   4.02047      0.067      2.68032e-01 ( -6.171e-03 )
+Regularization                 0.12118      1.000      1.21181e-01 ( -2.865e-03 )
+Total                                                  3.14279e+00 ( -7.704e-02 )
+-------------------------------------------------------------------------------------
+Backing up result/optimise/combined.xml -> result/optimise/combined_3.xml
+#========================================================================#
+#|  The force field has been written to the result/optimise directory.  |#
+#|    Input file with optimization parameters saved to optimise.sav.    |#
+#========================================================================#
+
+  Step       |k|        |dk|       |grad|       -=X2=-     Delta(X2)    StepQual
+     6   3.481e-01   1.764e-02   1.023e+02   3.14279e+00  -7.704e-02      0.166
+
+#========================================================#
+#|                    Total Gradient                    |#
+#========================================================#
+   0 [ -1.00213549e+02 ] : CElement/cfree
+   1 [ -4.32851574e-01 ] : NElement/nfree
+   2 [ -4.54150455e+00 ] : OElement/ofree
+   3 [  4.29489807e+00 ] : HElement/hfree
+   4 [  1.52378856e+00 ] : XElement/hpolfree
+   5 [ -1.92054530e+01 ] : xalpha/alpha
+   6 [  2.16617964e+00 ] : xbeta/beta
+----------------------------------------------------------
+Convergence criterion reached for objective function (1.00e-01)
+#========================================================#
+#|                Optimization Converged                |#
+#|            Final objective function value            |#
+#|   Full:  3.142786e+00  Un-penalized:  3.021605e+00   |#
+#========================================================#
+#========================================================#
+#|            Final optimization parameters:            |#
+#========================================================#
+   0 [ -4.2616e-02 ] : CElement/cfree
+   1 [  1.2668e-02 ] : NElement/nfree
+   2 [ -7.3758e-02 ] : OElement/ofree
+   3 [  7.8480e-02 ] : HElement/hfree
+   4 [  8.7806e-02 ] : XElement/hpolfree
+   5 [  1.3058e-01 ] : xalpha/alpha
+   6 [ -2.8783e-01 ] : xbeta/beta
+#========================================================#
+#|              Final physical parameters:              |#
+#========================================================#
+   0 [  1.9914e+00 ] : CElement/cfree
+   1 [  1.7418e+00 ] : NElement/nfree
+   2 [  1.4820e+00 ] : OElement/ofree
+   3 [  1.7687e+00 ] : HElement/hfree
+   4 [  1.0878e+00 ] : XElement/hpolfree
+   5 [  1.1306e+00 ] : xalpha/alpha
+   6 [  3.5609e-01 ] : xbeta/beta
+----------------------------------------------------------
+Backing up result/optimise/combined.xml -> result/optimise/combined_4.xml
+#========================================================================#
+#|  The force field has been written to the result/optimise directory.  |#
+#|    Input file with optimization parameters saved to optimise.sav.    |#
+#========================================================================#
+Wall time since calculation start: 129321.9 seconds
+#========================================================#
+#|                Calculation Finished.                 |#
+#|      ---==(  May the Force be with you!  )==---      |#
+#========================================================#
