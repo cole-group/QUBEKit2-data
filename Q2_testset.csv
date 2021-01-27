@@ -1,4 +1,4 @@
-name,charge,multiplicity,config,smiles,torsion_order,restart,end
+name,charge,multiplicity,config_file,smiles,torsion_order,restart,end
 1,,,,CCC#N,,,
 2,,,,C(CO)O,,,
 3,,,,C1CCOC1,,,

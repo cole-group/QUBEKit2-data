@@ -1,4 +1,4 @@
-name,charge,multiplicity,config,smiles,torsion_order,restart,end
+name,charge,multiplicity,config_file,smiles,torsion_order,restart,end
 mol01,,,,OC,,,
 mol02,,,,C-C#N,,,
 mol03,,,,CCCN,,,
@@ -6,7 +6,7 @@ mol04,,,,COCCC,,,
 mol05,,,,CCOCC,,,
 mol06,,,,CC1=CC=CC=C1,,,
 mol07,,,,Cc1ccc(C)cc1,,,
-mol08,,,,N1(C)CCOCC1,,,
+mol08,,,,CN(C)C=O,,,
 mol09,,,,c1cocc1,,,
 mol10,,,,c1ccccc1N,,,
 mol11,,,,CCCCO,,,
