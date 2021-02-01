@@ -50,17 +50,10 @@ def get_dens_hvap_from_fb(file_path='optimise.out'):
     return densities, enthalpies
 
 
-def calc_mues():
+def calc_mues(qb=False, fb=False):
     """
     Calculate the MUEs for the QUBEBench and Forcebalance outputs
     """
-
-    for file in os.listdir('.'):
-        if file.endswith('a_qb_out.txt'):
-            qb_file_path = file
-            break
-    else:
-        raise FileNotFoundError('Cannot find qb output file.')
 
     exp_densities = {
         1: 787, 2: 787, 3: 733, 4: 736, 5: 713,
@@ -76,23 +69,34 @@ def calc_mues():
     }
     exp_enthalpies = {key: value / 4.184 for key, value in exp_enthalpies.items()}
 
-    fb_densities, fb_enthalpies = get_dens_hvap_from_fb()
+    results = dict()
 
-    fb_dens_avg_mue = sum(abs(dens - exp_dens) for dens, exp_dens in zip(fb_densities.values(), exp_densities.values())) / 15
-    fb_hvap_avg_mue = sum(abs(hvap - exp_hvap) for hvap, exp_hvap in zip(fb_enthalpies.values(), exp_enthalpies.values())) / 15
+    if qb:
+        for file in os.listdir('.'):
+            if file.endswith('a_qb_out.txt'):
+                qb_file_path = file
+                break
+        else:
+            raise FileNotFoundError('Cannot find qb output file.')
 
-    fb_results = [round(fb_dens_avg_mue, 4), round(fb_hvap_avg_mue, 4)]
+        qb_densities, qb_enthalpies = get_dens_hvap_from_qb(qb_file_path)
 
-    qb_densities, qb_enthalpies = get_dens_hvap_from_qb(qb_file_path)
+        qb_dens_avg_mue = sum(abs(dens - exp_dens) for dens, exp_dens in zip(qb_densities.values(), exp_densities.values())) / 15
+        qb_hvap_avg_mue = sum(abs(hvap - exp_hvap) for hvap, exp_hvap in zip(qb_enthalpies.values(), exp_enthalpies.values())) / 15
 
-    qb_dens_avg_mue = sum(abs(dens - exp_dens) for dens, exp_dens in zip(qb_densities.values(), exp_densities.values())) / 15
-    qb_hvap_avg_mue = sum(abs(hvap - exp_hvap) for hvap, exp_hvap in zip(qb_enthalpies.values(), exp_enthalpies.values())) / 15
+        results['qb'] = [round(qb_dens_avg_mue, 4), round(qb_hvap_avg_mue, 4)]
 
-    qb_results = [round(qb_dens_avg_mue, 4), round(qb_hvap_avg_mue, 4)]
+    if fb:
+        fb_densities, fb_enthalpies = get_dens_hvap_from_fb()
 
-    return fb_results, qb_results
+        fb_dens_avg_mue = sum(abs(dens - exp_dens) for dens, exp_dens in zip(fb_densities.values(), exp_densities.values())) / 15
+        fb_hvap_avg_mue = sum(abs(hvap - exp_hvap) for hvap, exp_hvap in zip(fb_enthalpies.values(), exp_enthalpies.values())) / 15
+
+        results['fb'] = [round(fb_dens_avg_mue, 4), round(fb_hvap_avg_mue, 4)]
+
+    return results
 
 
 if __name__ == '__main__':
-    os.chdir('runs/014')
-    print(calc_mues())
+    os.chdir('runs/002')
+    print(calc_mues(qb=True))
