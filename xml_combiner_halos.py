@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from QUBEKit.utils import constants
-from QUBEKit.utils.file_handling import extract_charge_data
+# from QUBEKit.utils.file_handling import extract_charge_data
 
 from collections import namedtuple
 import os
@@ -107,11 +107,11 @@ class ParseXML:
 
         ForceBalance = ET.SubElement(base, 'ForceBalance')
         # TODO Add all (relevant) elements. Exclude elements if they're not in the test set?
-        ET.SubElement(ForceBalance, 'CElement', cfree='2.08', bfree='46.6', vfree='34.4', parameterize='cfree')
-        ET.SubElement(ForceBalance, 'NElement', nfree='1.72', bfree='24.2', vfree='25.9', parameterize='nfree')
-        ET.SubElement(ForceBalance, 'OElement', ofree='1.60', bfree='15.6', vfree='22.1', parameterize='ofree')
-        ET.SubElement(ForceBalance, 'HElement', hfree='1.64', bfree='6.5', vfree='7.6', parameterize='hfree')
-        ET.SubElement(ForceBalance, 'XElement', hpolfree='1.00', bfree='6.5', vfree='7.6', parameterize='hpolfree')
+        # ET.SubElement(ForceBalance, 'CElement', cfree='2.08', bfree='46.6', vfree='34.4', parameterize='cfree')
+        # ET.SubElement(ForceBalance, 'NElement', nfree='1.72', bfree='24.2', vfree='25.9', parameterize='nfree')
+        # ET.SubElement(ForceBalance, 'OElement', ofree='1.60', bfree='15.6', vfree='22.1', parameterize='ofree')
+        # ET.SubElement(ForceBalance, 'HElement', hfree='1.64', bfree='6.5', vfree='7.6', parameterize='hfree')
+        # ET.SubElement(ForceBalance, 'XElement', hpolfree='1.00', bfree='6.5', vfree='7.6', parameterize='hpolfree')
         ET.SubElement(ForceBalance, 'FElement', ffree='1.58', bfree='9.5', vfree='18.2', parameterize='ffree')
         ET.SubElement(ForceBalance, 'ClElement', clfree='1.88', bfree='94.6', vfree='65.1', parameterize='clfree')
         ET.SubElement(ForceBalance, 'BrElement', brfree='1.96', bfree='162.0', vfree='95.7', parameterize='brfree')
@@ -218,18 +218,26 @@ class ParseXML:
                         vol = self.ddec_data[mol_name][atom_index].volume
                         bfree = self.elem_dict[atomic_symbol].bfree
                         vfree = self.elem_dict[atomic_symbol].vfree
-                        ET.SubElement(NonbondedForce, 'Atom', attrib={
-                            'charge': force.get('charge'),
-                            'sigma': force.get('sigma'),
-                            'epsilon': force.get('epsilon'),
-                            'type': self.increment_str(force.get('type'), increment),
-                            'volume': f'{vol}',
-                            'bfree': f'{bfree}',
-                            'vfree': f'{vfree}',
-                            'parameter_eval':
-                                f"epsilon={bfree}/(128*PARM['{ele}Element/{free}free']**6)*{constants.EPSILON_CONVERSION}, "
-                                f"sigma=2**(5/6)*({vol}/{vfree})**(1/3)*PARM['{ele}Element/{free}free']*{constants.SIGMA_CONVERSION}",
-                        })
+                        if atomic_symbol.lower() in ['f', 'cl', 'br', 'i', 's']:
+                            ET.SubElement(NonbondedForce, 'Atom', attrib={
+                                'charge': force.get('charge'),
+                                'sigma': force.get('sigma'),
+                                'epsilon': force.get('epsilon'),
+                                'type': self.increment_str(force.get('type'), increment),
+                                'volume': f'{vol}',
+                                'bfree': f'{bfree}',
+                                'vfree': f'{vfree}',
+                                'parameter_eval':
+                                    f"epsilon={bfree}/(128*PARM['{ele}Element/{free}free']**6)*{constants.EPSILON_CONVERSION}, "
+                                    f"sigma=2**(5/6)*({vol}/{vfree})**(1/3)*PARM['{ele}Element/{free}free']*{constants.SIGMA_CONVERSION}",
+                            })
+                        else:
+                            ET.SubElement(NonbondedForce, 'Atom', attrib={
+                                'charge': force.get('charge'),
+                                'sigma': force.get('sigma'),
+                                'epsilon': force.get('epsilon'),
+                                'type': self.increment_str(force.get('type'), increment),
+                            })
             increment += raise_by
 
         tree = ET.ElementTree(base).getroot()

@@ -1,0 +1,165 @@
+gmx: error while loading shared libraries: libcufft.so.9.2: cannot open shared object file: No such file or directory
+MINIMISATION STARTED
+MINIMISATION DONE
+Results for: mol04.
+Energy at minima is 5.120 kcal/mol
+Average liquid temperature (K) =  298.10986
+Average liquid energy (kcal / mol) =  11.73893
+Average liquid density (g / cc) =  0.70060
+Average gas temperature (K) =  299.82421
+Average gas energy (kcal / mol) =  17.07663
+Heat of vap (kcal/mol) =  5.86341
+gmx: error while loading shared libraries: libcufft.so.9.2: cannot open shared object file: No such file or directory
+MINIMISATION STARTED
+MINIMISATION DONE
+Results for: mol14.
+Energy at minima is -66.725 kcal/mol
+Average liquid temperature (K) =  298.16498
+Average liquid energy (kcal / mol) = -66.66844
+Average liquid density (g / cc) =  0.84806
+Average gas temperature (K) =  298.36065
+Average gas energy (kcal / mol) = -59.41328
+Heat of vap (kcal/mol) =  7.84258
+gmx: error while loading shared libraries: libcufft.so.9.2: cannot open shared object file: No such file or directory
+MINIMISATION STARTED
+MINIMISATION DONE
+Results for: mol09.
+Energy at minima is 2.422 kcal/mol
+Average liquid temperature (K) =  298.24491
+Average liquid energy (kcal / mol) =  3.04946
+Average liquid density (g / cc) =  0.97730
+Average gas temperature (K) =  298.91273
+Average gas energy (kcal / mol) =  8.70765
+Heat of vap (kcal/mol) =  6.23635
+gmx: error while loading shared libraries: libcufft.so.9.2: cannot open shared object file: No such file or directory
+MINIMISATION STARTED
+MINIMISATION DONE
+Results for: mol03.
+Energy at minima is 3.023 kcal/mol
+Average liquid temperature (K) =  298.19749
+Average liquid energy (kcal / mol) =  5.42504
+Average liquid density (g / cc) =  0.75886
+Average gas temperature (K) =  297.67953
+Average gas energy (kcal / mol) =  12.29817
+Heat of vap (kcal/mol) =  7.48219
+gmx: error while loading shared libraries: libcufft.so.9.2: cannot open shared object file: No such file or directory
+MINIMISATION STARTED
+MINIMISATION DONE
+Results for: mol08.
+Energy at minima is 4.983 kcal/mol
+Average liquid temperature (K) =  298.24673
+Average liquid energy (kcal / mol) =  3.85918
+Average liquid density (g / cc) =  0.94101
+Average gas temperature (K) =  295.25465
+Average gas energy (kcal / mol) =  13.42440
+Heat of vap (kcal/mol) =  10.24644
+gmx: error while loading shared libraries: libcufft.so.9.2: cannot open shared object file: No such file or directory
+MINIMISATION STARTED
+MINIMISATION DONE
+Results for: mol13.
+Energy at minima is 13.306 kcal/mol
+Average liquid temperature (K) =  298.08997
+Average liquid energy (kcal / mol) =  12.77759
+Average liquid density (g / cc) =  0.72991
+Average gas temperature (K) =  299.23392
+Average gas energy (kcal / mol) =  17.89195
+Heat of vap (kcal/mol) =  5.68941
+gmx: error while loading shared libraries: libcufft.so.9.2: cannot open shared object file: No such file or directory
+MINIMISATION STARTED
+MINIMISATION DONE
+Results for: mol06.
+Energy at minima is -7.044 kcal/mol
+Average liquid temperature (K) =  298.24912
+Average liquid energy (kcal / mol) = -3.54635
+Average liquid density (g / cc) =  0.86889
+Average gas temperature (K) =  298.23065
+Average gas energy (kcal / mol) =  4.32967
+Heat of vap (kcal/mol) =  8.46882
+gmx: error while loading shared libraries: libcufft.so.9.2: cannot open shared object file: No such file or directory
+MINIMISATION STARTED
+MINIMISATION DONE
+Results for: mol12.
+Energy at minima is -11.720 kcal/mol
+Average liquid temperature (K) =  298.08243
+Average liquid energy (kcal / mol) = -3.25419
+Average liquid density (g / cc) =  0.61916
+Average gas temperature (K) =  300.64886
+Average gas energy (kcal / mol) =  1.89761
+Heat of vap (kcal/mol) =  5.62922
+gmx: error while loading shared libraries: libcufft.so.9.2: cannot open shared object file: No such file or directory
+MINIMISATION STARTED
+MINIMISATION DONE
+Results for: mol10.
+Energy at minima is -29.572 kcal/mol
+Average liquid temperature (K) =  298.12750
+Average liquid energy (kcal / mol) = -31.73305
+Average liquid density (g / cc) =  1.07188
+Average gas temperature (K) =  299.41049
+Average gas energy (kcal / mol) = -18.77997
+Heat of vap (kcal/mol) =  13.49931
+gmx: error while loading shared libraries: libcufft.so.9.2: cannot open shared object file: No such file or directory
+MINIMISATION STARTED
+MINIMISATION DONE
+Results for: mol15.
+Energy at minima is -58.738 kcal/mol
+Average liquid temperature (K) =  298.15050
+Average liquid energy (kcal / mol) = -59.37285
+Average liquid density (g / cc) =  0.84586
+Average gas temperature (K) =  298.37822
+Average gas energy (kcal / mol) = -49.91342
+Heat of vap (kcal/mol) =  10.04473
+gmx: error while loading shared libraries: libcufft.so.9.2: cannot open shared object file: No such file or directory
+MINIMISATION STARTED
+MINIMISATION DONE
+Results for: mol07.
+Energy at minima is -13.053 kcal/mol
+Average liquid temperature (K) =  298.18775
+Average liquid energy (kcal / mol) = -8.26661
+Average liquid density (g / cc) =  0.86357
+Average gas temperature (K) =  297.80943
+Average gas energy (kcal / mol) =  0.63267
+Heat of vap (kcal/mol) =  9.50940
+gmx: error while loading shared libraries: libcufft.so.9.2: cannot open shared object file: No such file or directory
+MINIMISATION STARTED
+MINIMISATION DONE
+Results for: mol01.
+Energy at minima is 9.220 kcal/mol
+Average liquid temperature (K) =  298.06338
+Average liquid energy (kcal / mol) =  6.08929
+Average liquid density (g / cc) =  0.86373
+Average gas temperature (K) =  299.53823
+Average gas energy (kcal / mol) =  12.87728
+Heat of vap (kcal/mol) =  7.36251
+gmx: error while loading shared libraries: libcufft.so.9.2: cannot open shared object file: No such file or directory
+MINIMISATION STARTED
+MINIMISATION DONE
+Results for: mol05.
+Energy at minima is -17.610 kcal/mol
+Average liquid temperature (K) =  298.20606
+Average liquid energy (kcal / mol) = -10.64853
+Average liquid density (g / cc) =  0.70128
+Average gas temperature (K) =  298.78052
+Average gas energy (kcal / mol) = -5.31303
+Heat of vap (kcal/mol) =  5.90535
+gmx: error while loading shared libraries: libcufft.so.9.2: cannot open shared object file: No such file or directory
+MINIMISATION STARTED
+MINIMISATION DONE
+Results for: mol02.
+Energy at minima is -21.538 kcal/mol
+Average liquid temperature (K) =  298.21804
+Average liquid energy (kcal / mol) = -24.62399
+Average liquid density (g / cc) =  0.76026
+Average gas temperature (K) =  296.93291
+Average gas energy (kcal / mol) = -17.97722
+Heat of vap (kcal/mol) =  7.25417
+gmx: error while loading shared libraries: libcufft.so.9.2: cannot open shared object file: No such file or directory
+MINIMISATION STARTED
+MINIMISATION DONE
+Results for: mol11.
+Energy at minima is -4.290 kcal/mol
+Average liquid temperature (K) =  298.14745
+Average liquid energy (kcal / mol) = -2.94682
+Average liquid density (g / cc) =  0.81896
+Average gas temperature (K) =  298.87542
+Average gas energy (kcal / mol) =  6.61664
+Heat of vap (kcal/mol) =  10.12736

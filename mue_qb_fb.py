@@ -8,8 +8,8 @@ def get_dens_hvap_from_qb(file_path='001a_qb_out.txt'):
     """
 
     # Initialise with empty values so order is preserved.
-    densities = {i: 0 for i in range(1, 16)}
-    enthalpies = {i: 0 for i in range(1, 16)}
+    densities = {i: 0 for i in range(1, 54)}
+    enthalpies = {i: 0 for i in range(1, 54)}
 
     with open(file_path) as qb_file:
         lines = qb_file.readlines()
@@ -73,7 +73,7 @@ def calc_mues(qb=False, fb=False):
 
     if qb:
         for file in os.listdir('.'):
-            if file.endswith('a_qb_out.txt'):
+            if file.endswith('_qb_out.txt'):
                 qb_file_path = file
                 break
         else:
@@ -98,5 +98,50 @@ def calc_mues(qb=False, fb=False):
 
 
 if __name__ == '__main__':
-    os.chdir('runs/002')
+    import collections
+    os.chdir('runs/training/002')
     print(calc_mues(qb=True))
+    a, b = get_dens_hvap_from_qb("002a_qb_out.txt")
+    od = collections.OrderedDict(sorted(a.items()))
+    for key, val in od.items():
+        print(val)
+
+    # with open('Q2_testset.csv') as inf, open('Q2_testset_001.csv', 'w+') as outf:
+    #     for line in inf:
+    #         if '009.ini' in line:
+    #             outf.write(line.replace('009.ini', '001.ini'))
+    #         else:
+    #             outf.write(line)
+
+    # dens = dict()
+    # hvap = dict()
+    # with open('results.csv') as results:
+    #     lines = results.readlines()[1:]
+    #     for line in lines:
+    #         linelst = line.split(',')
+    #         key = linelst[0]
+    #         dens[key] = linelst[3]
+    #         hvap[key] = linelst[]
+
+
+    # with open('Q2_testset.csv') as testset:
+    #     for line in testset:
+    #         print(line.split(',')[4])
+
+# os.chdir('runs')
+# for i in range(1, 17):
+#     name = str(i).zfill(3)
+#     try:
+#         os.chdir(name)
+#     except FileNotFoundError:
+#         continue
+#     with open('../../Q2_testset.csv') as in_file, open(f'Q2_testset_{name}.csv', 'w') as out_file:
+#         for line in in_file:
+#             if 'smiles' in line:
+#                 out_file.write(line)
+#             else:
+#                 out_file.write('mol')
+#                 out_file.write(line[:5])
+#                 out_file.write(f'{name}.ini')
+#                 out_file.write(line[5:])
+#     os.chdir('../')
