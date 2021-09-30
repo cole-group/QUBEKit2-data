@@ -50,7 +50,21 @@ def get_dens_hvap_from_fb(file_path='optimise.out'):
     return densities, enthalpies
 
 
-def calc_mues(qb=False, fb=False):
+def get_dens_hvap_from_csv(file_path='results.csv'):
+    densities = {i: 0 for i in range(1, 54)}
+    enthalpies = {i: 0 for i in range(1, 54)}
+
+    with open(file_path) as csv_file:
+        for line in csv_file:
+            if 'mol' in line:
+                key = int(line[3:5])
+                densities[key] = float(line.split(',')[3])
+                enthalpies[key] = float(line.split(',')[-1])
+
+    return densities, enthalpies
+
+
+def calc_mues(qb=False, fb=False, csv=False):
     """
     Calculate the MUEs for the QUBEBench and Forcebalance outputs
     """
@@ -86,6 +100,20 @@ def calc_mues(qb=False, fb=False):
 
         results['qb'] = [round(qb_dens_avg_mue, 4), round(qb_hvap_avg_mue, 4)]
 
+    if csv:
+        csv_densities, csv_enthalpies = get_dens_hvap_from_csv()
+
+        print(csv_densities)
+        print(exp_densities)
+
+        print(csv_enthalpies)
+        print(exp_enthalpies)
+
+        csv_dens_avg_mue = sum(abs(dens - exp_dens) for dens, exp_dens in zip(csv_densities.values(), exp_densities.values())) / 15
+        csv_hvap_avg_mue = sum(abs(hvap - exp_hvap) for hvap, exp_hvap in zip(csv_enthalpies.values(), exp_enthalpies.values())) / 15
+
+        results['qb'] = [round(csv_dens_avg_mue, 4), round(csv_hvap_avg_mue, 4)]
+
     if fb:
         fb_densities, fb_enthalpies = get_dens_hvap_from_fb()
 
@@ -98,13 +126,18 @@ def calc_mues(qb=False, fb=False):
 
 
 if __name__ == '__main__':
-    import collections
+    # import collections
+    # os.chdir('runs/test/014')
+    # print(calc_mues(qb=True))
+    # dens, hvap = get_dens_hvap_from_qb("014a_qb_out.txt")
+    # od = collections.OrderedDict(sorted(dens.items()))
+    # for key, val in od.items():
+    #     print(val)
+
     os.chdir('runs/training/002')
-    print(calc_mues(qb=True))
-    a, b = get_dens_hvap_from_qb("002a_qb_out.txt")
-    od = collections.OrderedDict(sorted(a.items()))
-    for key, val in od.items():
-        print(val)
+    print(calc_mues(csv=True))
+
+
 
     # with open('Q2_testset.csv') as inf, open('Q2_testset_001.csv', 'w+') as outf:
     #     for line in inf:
