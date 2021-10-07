@@ -4,6 +4,8 @@ import xml.etree.ElementTree as ET
 
 import matplotlib.pyplot as plt
 
+from numpy.polynomial.polynomial import polyfit
+
 
 def find_xmls():
     xmls = dict()
@@ -57,8 +59,15 @@ def plot(run_a='001', run_b='015'):
     plt.ylabel(run_b)
     plt.plot([-1, 1], [-1, 1], c='black')
     plt.title(f'run{run_a} vs run{run_b}')
+
+    intercept, gradient = polyfit(
+        run_a_charges, run_b_charges, 1
+    )
+    print(run_b, end='  ')
+    print(round(gradient, 4))
     # plt.show()
     plt.savefig(f'{run_a}_vs_{run_b}')
+    plt.figure().clear()
 
 
 # def new_plot(run='001'):
@@ -103,7 +112,7 @@ if __name__ == '__main__':
 
     os.chdir('runs/training')
     runs = [
-        '015'
+        '005', '006', '007', '009', '015'
     ]
     for run in runs:
         plot(run_b=run)
