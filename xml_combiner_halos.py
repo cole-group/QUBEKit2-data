@@ -150,18 +150,20 @@ class ParseXML:
         self.combine_molecules()
 
     def find_xmls_and_ddec_data(self):
-        for root, dirs, files in os.walk('.', topdown=True):
-            for di in dirs:
-                if f'QUBEKit_mol' in di:
-                    mol_name = di.split('_')[1]
-                    self.xmls[mol_name] = ET.parse(f'{di}/final_parameters/{mol_name}.xml')
+        for i in range(1, 100):
+            mol_name = f"mol{str(i).zfill(2)}"
+            for file in os.listdir("."):
+                if mol_name in file:
+                    self.xmls[mol_name] = ET.parse(f'{file}/final_parameters/{mol_name}.xml')
 
                     home = os.getcwd()
-                    os.chdir(f'{di}/charges/ChargeMol')
+                    os.chdir(f'{file}/charges/ChargeMol')
                     ddec_data, _, _ = extract_charge_data()
                     os.chdir(home)
 
                     self.ddec_data[mol_name] = ddec_data
+            else:
+                break
 
     @staticmethod
     def increment_str(string, increment):
@@ -384,7 +386,7 @@ class ParseXML:
                                     'bfree': f'{bfree}',
                                     'vfree': f'{vfree}',
                                     'parameter_eval':
-                                        f"epsilon={bfree}/(128*PARM['{ele}Element/{free}free']**6)*{57.65243631675715}, "
+                                        f"epsilon=(1.2207*({vol}/{vfree})**0.48856)*{bfree}/(128*PARM['{ele}Element/{free}free']**6)*{57.65243631675715}, "
                                         f"sigma=2**(5/6)*({vol}/{vfree})**(1/3)*PARM['{ele}Element/{free}free']*{0.1}",
                                 })
                             else:

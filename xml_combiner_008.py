@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 
-from QUBEKit.utils import constants
-from QUBEKit.utils.file_handling import extract_charge_data
-
 from collections import namedtuple
 import os
 from xml.dom.minidom import parseString
@@ -20,8 +17,105 @@ Script will:
     * Isolate the necessary L-J params e.g. volume
     * Construct a new xml containing:
         * Forcefield data from all molecules
-        * Params needed for forcebalance
+        * Params needed for forcebalance`
 """
+
+from types import SimpleNamespace
+
+
+class CustomNamespace(SimpleNamespace):
+    """
+    Adds iteration and dict-style access of keys, values and items to SimpleNamespace.
+    TODO Add get() method? (similar to dict)
+    """
+    def keys(self):
+        for key in self.__dict__:
+            yield key
+
+    def values(self):
+        for value in self.__dict__.values():
+            yield value
+
+    def items(self):
+        for key, value in self.__dict__.items():
+            yield key, value
+
+    def __iter__(self):
+        return self.items()
+
+
+def extract_charge_data(ddec_version=6):
+    """
+    From Chargemol output files, extract the necessary parameters for calculation of L-J.
+
+    :returns: 3 CustomNamespaces, ddec_data; dipole_moment_data; and quadrupole_moment_data
+    ddec_data used for calculating monopole esp and L-J values (used by both LennardJones and Charges classes)
+    dipole_moment_data used for calculating dipole esp
+    quadrupole_moment_data used for calculating quadrupole esp
+    """
+
+    if ddec_version == 6:
+        net_charge_file_name = 'DDEC6_even_tempered_net_atomic_charges.xyz'
+
+    elif ddec_version == 3:
+        net_charge_file_name = 'DDEC3_net_atomic_charges.xyz'
+
+    else:
+        raise ValueError('Unsupported DDEC version; please use version 3 or 6.')
+
+    if not os.path.exists(net_charge_file_name):
+        raise FileNotFoundError(
+            'Cannot find the DDEC output file.\nThis could be indicative of several issues.\n'
+            'Please check Chargemol is installed in the correct location and that the configs'
+            ' point to that location.'
+        )
+
+    with open(net_charge_file_name, 'r+') as charge_file:
+        lines = charge_file.readlines()
+
+    # Find number of atoms
+    atom_total = int(lines[0])
+
+    for pos, row in enumerate(lines):
+        # Data marker:
+        if 'The following XYZ' in row:
+            start_pos = pos + 2
+            break
+    else:
+        raise EOFError(f'Cannot find charge data in {net_charge_file_name}.')
+
+    ddec_data = {}
+    dipole_moment_data = {}
+    quadrupole_moment_data = {}
+
+    for line in lines[start_pos: start_pos + atom_total]:
+        # _s are the xyz coords, then the quadrupole moment tensor eigenvalues
+        atom_count, atomic_symbol, _, _, _, charge, x_dipole, y_dipole, z_dipole, _, q_xy, q_xz, q_yz, q_x2_y2, q_3z2_r2, *_ = line.split()
+        # File counts from 1 not 0; thereby requiring -1 to get the index
+        atom_index = int(atom_count) - 1
+        ddec_data[atom_index] = CustomNamespace(
+            atomic_symbol=atomic_symbol, charge=float(charge), volume=None, r_aim=None, b_i=None, a_i=None
+        )
+
+        dipole_moment_data[atom_index] = CustomNamespace(
+            x_dipole=float(x_dipole), y_dipole=float(y_dipole), z_dipole=float(z_dipole)
+        )
+
+        quadrupole_moment_data[atom_index] = CustomNamespace(
+            q_xy=float(q_xy), q_xz=float(q_xz), q_yz=float(q_yz), q_x2_y2=float(q_x2_y2), q_3z2_r2=float(q_3z2_r2)
+        )
+
+    r_cubed_file_name = 'DDEC_atomic_Rcubed_moments.xyz'
+
+    with open(r_cubed_file_name, 'r+') as vol_file:
+        lines = vol_file.readlines()
+
+    vols = [float(line.split()[-1]) for line in lines[2:atom_total + 2]]
+
+    for atom_index in ddec_data:
+        ddec_data[atom_index].volume = vols[atom_index]
+
+    return ddec_data, dipole_moment_data, quadrupole_moment_data
 
 
 class ParseXML:
@@ -58,12 +152,12 @@ class ParseXML:
     def find_xmls_and_ddec_data(self):
         for root, dirs, files in os.walk('.', topdown=True):
             for di in dirs:
-                if f'QUBEKit_' in di:
+                if f'QUBEKit_mol' in di:
                     mol_name = di.split('_')[1]
-                    self.xmls[mol_name] = ET.parse(f'{di}/11_finalise/{mol_name}.xml')
+                    self.xmls[mol_name] = ET.parse(f'{di}/final_parameters/{mol_name}.xml')
 
                     home = os.getcwd()
-                    os.chdir(f'{di}/08_lennard_jones')
+                    os.chdir(f'{di}/charges/ChargeMol')
                     ddec_data, _, _ = extract_charge_data()
                     os.chdir(home)
 
@@ -75,6 +169,9 @@ class ParseXML:
         if 'QUBE' in string:
             num = int(string[5:]) + increment
             return f'QUBE_{str(num).zfill(4)}'
+        if 'v-site' in string:
+            num = int(string[6:]) + increment
+            return f'v-site{str(num).zfill(4)}'
         try:
             return str(int(string) + increment)
         except ValueError:
@@ -111,12 +208,7 @@ class ParseXML:
         ET.SubElement(ForceBalance, 'NElement', nfree='1.72', bfree='24.2', vfree='25.9', parameterize='nfree')
         ET.SubElement(ForceBalance, 'OElement', ofree='1.60', bfree='15.6', vfree='22.1', parameterize='ofree')
         ET.SubElement(ForceBalance, 'HElement', hfree='1.64', bfree='6.5', vfree='7.6', parameterize='hfree')
-        ET.SubElement(ForceBalance, 'XElement', hpolfree='1.00', bfree='6.5', vfree='7.6', parameterize='hpolfree')
-        ET.SubElement(ForceBalance, 'FElement', ffree='1.58', bfree='9.5', vfree='18.2', parameterize='ffree')
-        ET.SubElement(ForceBalance, 'ClElement', clfree='1.88', bfree='94.6', vfree='65.1', parameterize='clfree')
-        ET.SubElement(ForceBalance, 'BrElement', brfree='1.96', bfree='162.0', vfree='95.7', parameterize='brfree')
-        ET.SubElement(ForceBalance, 'IElement', ifree='2.04', bfree='385.0', vfree='153.8', parameterize='ifree')
-        ET.SubElement(ForceBalance, 'SElement', sfree='2.00', bfree='134.0', vfree='75.2', parameterize='sfree')
+        # ET.SubElement(ForceBalance, 'XElement', hpolfree='1.00', bfree='6.5', vfree='7.6', parameterize='hpolfree')
 
         # Increase by the number of atoms in each molecule upon addition to the combined xml.
         increment = 0
@@ -137,12 +229,19 @@ class ParseXML:
                 if child.tag == 'AtomTypes':
                     for i, atom in enumerate(child):
                         atoms[str(i)] = atom.get('element')
-                        ET.SubElement(AtomTypes, 'Type', attrib={
-                            'class': self.increment_str(atom.get('class'), increment),
-                            'element': atom.get('element'),
-                            'mass': atom.get('mass'),
-                            'name': self.increment_str(atom.get('name'), increment),
-                        })
+                        if atom.get('element') is not None:
+                            ET.SubElement(AtomTypes, 'Type', attrib={
+                                'class': self.increment_str(atom.get('class'), increment),
+                                'element': atom.get('element'),
+                                'mass': atom.get('mass'),
+                                'name': self.increment_str(atom.get('name'), increment),
+                            })
+                        else:
+                            ET.SubElement(AtomTypes, 'Type', attrib={
+                                'class': self.increment_str(atom.get('class'), increment),
+                                'mass': atom.get('mass'),
+                                'name': self.increment_str(atom.get('name'), increment),
+                            })
                         ET.SubElement(Residue, 'Atom', attrib={
                             'name': self.increment_str(atom.get('class'), increment),
                             'type': self.increment_str(atom.get('name'), increment),
@@ -162,7 +261,6 @@ class ParseXML:
                                 topology.add_node(atom_or_bond.get('from'))
                                 topology.add_node(atom_or_bond.get('to'))
                                 topology.add_edge(atom_or_bond.get('from'), atom_or_bond.get('to'))
-
                 elif child.tag == 'HarmonicBondForce':
                     for force in child:
                         ET.SubElement(HarmonicBondForce, 'Bond', attrib={
@@ -210,25 +308,26 @@ class ParseXML:
                         atomic_symbol = self.ddec_data[mol_name][atom_index].atomic_symbol
                         ele = atomic_symbol
                         free = atomic_symbol.lower()
-                        if atoms[typ] == 'H':
-                            for bonded in topology.neighbors(typ):
-                                if atoms[bonded] in ['O', 'N', 'S']:
-                                    ele = 'X'
-                                    free = 'hpol'
+                        # if atoms[typ] == 'H':
+                        #     for bonded in topology.neighbors(typ):
+                        #         if atoms[bonded] in ['O', 'N', 'S']:
+                        #             ele = 'X'
+                        #             free = 'hpol'
                         vol = self.ddec_data[mol_name][atom_index].volume
                         bfree = self.elem_dict[atomic_symbol].bfree
                         vfree = self.elem_dict[atomic_symbol].vfree
                         ET.SubElement(NonbondedForce, 'Atom', attrib={
                             'charge': force.get('charge'),
                             'sigma': force.get('sigma'),
-                            'epsilon': force.get('epsilon'),
+                            'epsilon': force.get('epsilon') / (128 * (self.elem_dict[atomic_symbol].rfree ** 6)),
                             'type': self.increment_str(force.get('type'), increment),
                             'volume': f'{vol}',
                             'bfree': f'{bfree}',
                             'vfree': f'{vfree}',
                             'parameter_eval':
-                                f"epsilon={bfree}/(128*PARM['{ele}Element/{free}free']**6)*{constants.EPSILON_CONVERSION}, "
-                                f"sigma=2**(5/6)*({vol}/{vfree})**(1/3)*PARM['{ele}Element/{free}free']*{constants.SIGMA_CONVERSION}",
+                            # EPSILON IS NOT ACTUALLY EPSILON WHEN DERIVED FROM THE ADJUSTED QUBEKIT CODE
+                                f"epsilon={force.get('epsilon')}/(128*PARM['{ele}Element/{free}free']**6)*{57.65243631675715}, "
+                                f"sigma=2**(5/6)*({vol}/{vfree})**(1/3)*PARM['{ele}Element/{free}free']*{0.1}",
                         })
             increment += raise_by
 

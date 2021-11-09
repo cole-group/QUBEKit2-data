@@ -134,8 +134,8 @@ if __name__ == '__main__':
     # for key, val in od.items():
     #     print(val)
 
-    os.chdir('runs/training/002')
-    print(calc_mues(csv=True))
+    os.chdir('runs/training/011')
+    print(calc_mues(fb=True))
 
 
 

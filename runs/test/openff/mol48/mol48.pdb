@@ -1,0 +1,20 @@
+COMPND    mol48
+HETATM    1  O1  UNL     1      -2.817   0.503   0.611  1.00  0.00           O  
+HETATM    2  C1  UNL     1      -2.105  -0.718   0.542  1.00  0.00           C  
+HETATM    3  C2  UNL     1      -0.658  -0.455   0.374  1.00  0.00           C  
+HETATM    4  C3  UNL     1       0.518  -0.224   0.236  1.00  0.00           C  
+HETATM    5  C4  UNL     1       1.945   0.077   0.080  1.00  0.00           C  
+HETATM    6  O2  UNL     1       2.205   1.443   0.326  1.00  0.00           O  
+HETATM    7  H1  UNL     1      -2.272   1.123   0.029  1.00  0.00           H  
+HETATM    8  H2  UNL     1      -2.434  -1.276  -0.361  1.00  0.00           H  
+HETATM    9  H3  UNL     1      -2.315  -1.355   1.405  1.00  0.00           H  
+HETATM   10  H4  UNL     1       2.485  -0.572   0.809  1.00  0.00           H  
+HETATM   11  H5  UNL     1       2.271  -0.097  -0.966  1.00  0.00           H  
+HETATM   12  H6  UNL     1       3.177   1.552   0.135  1.00  0.00           H  
+CONECT    1    2    7
+CONECT    2    3    8    9
+CONECT    3    4    4    4
+CONECT    4    5
+CONECT    5    6   10   11
+CONECT    6   12
+END
