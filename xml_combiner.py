@@ -1,13 +1,5 @@
 #!/usr/bin/env python3
 
-from collections import namedtuple
-import os
-from xml.dom.minidom import parseString
-import xml.etree.ElementTree as ET
-
-import networkx as nx
-
-
 """
 Add QUBEKit folders (QUBEKit_name_date_log) to wherever this script is being run from.
 
@@ -19,7 +11,14 @@ Script will:
         * Forcefield data from all molecules
         * Params needed for forcebalance
 """
+
+from collections import namedtuple
+import os
 from types import SimpleNamespace
+from xml.dom.minidom import parseString
+import xml.etree.ElementTree as ET
+
+import networkx as nx
 
 
 class CustomNamespace(SimpleNamespace):
@@ -142,30 +141,10 @@ class ParseXML:
                             self.ddec_data[mol_name] = extract_charge_data()
                             os.chdir('../../')
                     os.chdir('../')
-                    # try:
-                    #     self.xmls[mol_name] = ET.parse(f'{di}/11_finalise/{mol_name}.xml')
-                    # except FileNotFoundError:
-                    #     try:
-                    #         self.xmls[mol_name] = ET.parse(f'{di}/10_finalise/{mol_name}.xml')
-                    #     except FileNotFoundError:
-                    #         self.xmls[mol_name] = ET.parse(f'{di}/final_parameters/{mol_name}.xml')
-                    #
-                    # home = os.getcwd()
-                    # try:
-                    #     os.chdir(f'{di}/07_charges/ChargeMol')
-                    # except FileNotFoundError:
-                    #     try:
-                    #         os.chdir(f'{di}/06_charges/ChargeMol')
-                    #     except FileNotFoundError:
-                    #         os.chdir(f'{di}/charges/ChargeMol')
-                    #
-                    # ddec_data, _, _ = extract_charge_data()
-                    # self.ddec_data[mol_name] = ddec_data
-                    # os.chdir(home)
 
     @staticmethod
     def increment_str(string, increment):
-        """Take any standard string from the xml; if it ends in numbers, increment it."""
+        """Take any standard numbered string from the xml and increment it."""
         if 'QUBE' in string:
             num = int(string[5:]) + increment
             return f'QUBE_{str(num).zfill(4)}'
@@ -203,17 +182,11 @@ class ParseXML:
             'combination': 'amber'})
 
         ForceBalance = ET.SubElement(base, 'ForceBalance')
-        # TODO Add all (relevant) elements. Exclude elements if they're not in the test set?
         ET.SubElement(ForceBalance, 'CElement', cfree='2.08', bfree='46.6', vfree='34.4', parameterize='cfree')
         ET.SubElement(ForceBalance, 'NElement', nfree='1.72', bfree='24.2', vfree='25.9', parameterize='nfree')
         ET.SubElement(ForceBalance, 'OElement', ofree='1.60', bfree='15.6', vfree='22.1', parameterize='ofree')
         ET.SubElement(ForceBalance, 'HElement', hfree='1.64', bfree='6.5', vfree='7.6', parameterize='hfree')
         ET.SubElement(ForceBalance, 'XElement', hpolfree='1.00', bfree='6.5', vfree='7.6', parameterize='hpolfree')
-        ET.SubElement(ForceBalance, 'FElement', ffree='1.58', bfree='9.5', vfree='18.2', parameterize='ffree')
-        ET.SubElement(ForceBalance, 'ClElement', clfree='1.88', bfree='94.6', vfree='65.1', parameterize='clfree')
-        ET.SubElement(ForceBalance, 'BrElement', brfree='1.96', bfree='162.0', vfree='95.7', parameterize='brfree')
-        ET.SubElement(ForceBalance, 'IElement', ifree='2.04', bfree='385.0', vfree='153.8', parameterize='ifree')
-        ET.SubElement(ForceBalance, 'SElement', sfree='2.00', bfree='134.0', vfree='75.2', parameterize='sfree')
 
         # Increase by the number of atoms in each molecule upon addition to the combined xml.
         increment = 0
@@ -335,7 +308,6 @@ class ParseXML:
                 elif child.tag == 'PeriodicTorsionForce':
                     for force in child:
                         ET.SubElement(PeriodicTorsionForce, force.tag, attrib={
-                            # TODO Automate attribute access when they're the same?
                             'class1': self.increment_str(force.get('class1'), increment),
                             'class2': self.increment_str(force.get('class2'), increment),
                             'class3': self.increment_str(force.get('class3'), increment),
@@ -376,6 +348,8 @@ class ParseXML:
                             vol = self.ddec_data[mol_name][atom_index].volume
                             bfree = self.elem_dict[atomic_symbol].bfree
                             vfree = self.elem_dict[atomic_symbol].vfree
+                            alpha = 1.0
+                            beta = 0.001
                             ET.SubElement(NonbondedForce, 'Atom', attrib={
                                 'charge': force.get('charge'),
                                 'sigma': force.get('sigma'),
@@ -384,8 +358,11 @@ class ParseXML:
                                 'volume': f'{vol}',
                                 'bfree': f'{bfree}',
                                 'vfree': f'{vfree}',
+                                'alpha': f'{alpha}',
+                                'beta': f'{beta}',
                                 'parameter_eval':
-                                    f"epsilon={bfree}/(128*PARM['{ele}Element/{free}free']**6)*{57.65243631675715}, "
+                                    f"epsilon=(PARM['xalpha/alpha']*{bfree}*({vol}/{vfree})**PARM['xbeta/beta'])/(128*PARM['{ele}Element/{free}free']**6)*{57.65243631675715}, "
+                                    # f"epsilon={bfree}/(128*PARM['{ele}Element/{free}free']**6)*{57.65243631675715}, "
                                     f"sigma=2**(5/6)*({vol}/{vfree})**(1/3)*PARM['{ele}Element/{free}free']*{0.1}",
                             })
             increment += raise_by
