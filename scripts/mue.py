@@ -114,5 +114,5 @@ def calc_mues(run_type='qb', halos=False):
 
 if __name__ == '__main__':
 
-    os.chdir('runs/training/019')
+    os.chdir('../runs/training/019')
     calc_mues('qb', halos=False)

@@ -1,0 +1,13 @@
+name,smiles,multiplicity,config_file,restart,end
+mol01,CS(=O)C,,009.json,,
+mol02,CCS,,009.json,,
+mol03,CCF,,009.json,,
+mol04,CC(F)(F)F,,009.json,,
+mol05,CCC(Cl)C,,009.json,,
+mol06,C(Cl)C(C)Cl,,009.json,,
+mol07,CCCBr,,009.json,,
+mol08,CCC(C)(C)Br,,009.json,,
+mol09,CC(I)C,,009.json,,
+mol10,C(I)I,,009.json,,
+mol11,C(Cl)F,,009.json,,
+mol12,C(Br)(F)(F)F,,009.json,,

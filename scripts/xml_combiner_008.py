@@ -26,7 +26,6 @@ from types import SimpleNamespace
 class CustomNamespace(SimpleNamespace):
     """
     Adds iteration and dict-style access of keys, values and items to SimpleNamespace.
-    TODO Add get() method? (similar to dict)
     """
     def keys(self):
         for key in self.__dict__:
@@ -203,12 +202,10 @@ class ParseXML:
             'combination': 'amber'})
 
         ForceBalance = ET.SubElement(base, 'ForceBalance')
-        # TODO Add all (relevant) elements. Exclude elements if they're not in the test set?
         ET.SubElement(ForceBalance, 'CElement', cfree='2.08', bfree='46.6', vfree='34.4', parameterize='cfree')
         ET.SubElement(ForceBalance, 'NElement', nfree='1.72', bfree='24.2', vfree='25.9', parameterize='nfree')
         ET.SubElement(ForceBalance, 'OElement', ofree='1.60', bfree='15.6', vfree='22.1', parameterize='ofree')
         ET.SubElement(ForceBalance, 'HElement', hfree='1.64', bfree='6.5', vfree='7.6', parameterize='hfree')
-        # ET.SubElement(ForceBalance, 'XElement', hpolfree='1.00', bfree='6.5', vfree='7.6', parameterize='hpolfree')
 
         # Increase by the number of atoms in each molecule upon addition to the combined xml.
         increment = 0
@@ -283,7 +280,6 @@ class ParseXML:
                 elif child.tag == 'PeriodicTorsionForce':
                     for force in child:
                         ET.SubElement(PeriodicTorsionForce, force.tag, attrib={
-                            # TODO Automate attribute access when they're the same?
                             'class1': self.increment_str(force.get('class1'), increment),
                             'class2': self.increment_str(force.get('class2'), increment),
                             'class3': self.increment_str(force.get('class3'), increment),

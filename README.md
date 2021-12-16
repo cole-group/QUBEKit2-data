@@ -12,7 +12,7 @@ Each folder for training and testing contains:
  * A QUBEKit input file which can be used to generate the same data (.json file).
 
 
-## Optimising Rfree Parameters
+## Optimising and Evaluating Rfree Parameters
 
 In order to optimise a set of Rfree parameters for a particular training set, ForceBalance requires a forcefield for all molecules in a directory named `forcefield`.
 
@@ -39,7 +39,20 @@ Next, ForceBalance requires a target folder, containing files for each molecule:
 
 For the targets, simply generate a standard liquid box with the desired number of molecules, and edit a data.csv file to contain the relevant values.
 
-An example is laid out here, with some further example files in the targets folder of this repository:
+These liquid boxes can be generated using QUBEBench. 
+QUBEBench doesn't need to be installed, it can be run as a script.
+Simply run `python qubebench/run.py -csv <name>.csv` to create a csv with all molecules in the current working directory. 
+QUBEBench can then read this csv to either analyse the liquid properties:
+
+    python qubebench/run.py -bulk <name>.csv
+
+Or generate the relevant files for ForceBalance with `-fb`:
+
+    python qubebench/run.py -fb true
+
+This command will create liquid boxes of the appropriate size, as well as generating blank data.csv files, gas pdbs and all subfolders needed by ForceBalance.
+
+An example data.csv file is laid out here, with some further example files in the targets folder of this repository:
 
 ||||||||
 |---|---|---|---|---|---|---|
@@ -104,3 +117,11 @@ With the directory structure now like this:
 ForceBalance can be run with the command:
 
     ForceBalance optimise.in
+
+The resulting `optimise.out` file containing the optimised Rfree parameters can be used to produce a new force field. 
+QUBEKit can read this file automatically, or the parameters can be put into QUBEKit's json config file.
+QUBEKit can then be run as normal for any number of molecules. 
+To ensure best results, the run configuration should be the same as was used before the Rfree parameter optimisation (same basis set, virtual sites, etc).
+If being read automatically, a message will be displayed to the terminal confirming the Rfree parameters are being used.
+
+    "Updated free parameter from ForceBalance file."
