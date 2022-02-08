@@ -1,6 +1,8 @@
-# QUBEKit2Testing
+# QUBEKit2 Training and Testing Data
 
-All relevant information and input files for the testing of QUBEKit 2
+All relevant data and input files for the testing of QUBEKit2 to accompany the paper:
+
+[Exploration and Validation of Force Field Design Protocols through QM-to-MM Mapping](https://doi.org/10.26434/chemrxiv-2021-hsf8l) by Chris Ringrose, Joshua Horton, Lee-Ping Wang and Daniel Cole.
 
 QUBEKit config files, pdbs and xmls are all in the respective run folder, as per [spreadsheet](https://docs.google.com/spreadsheets/d/1KZ-0dXBqrnCeB0vvlfhA43mnr9Qea1sqMtXZcY3ksnY/edit#gid=0)
 
