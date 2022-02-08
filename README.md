@@ -4,7 +4,7 @@ All relevant data and input files for the testing of QUBEKit2 to accompany the p
 
 [Exploration and Validation of Force Field Design Protocols through QM-to-MM Mapping](https://doi.org/10.26434/chemrxiv-2021-hsf8l) by Chris Ringrose, Joshua Horton, Lee-Ping Wang and Daniel Cole.
 
-QUBEKit config files, pdbs and xmls are all in the respective run folder, as per [spreadsheet](https://docs.google.com/spreadsheets/d/1KZ-0dXBqrnCeB0vvlfhA43mnr9Qea1sqMtXZcY3ksnY/edit#gid=0)
+QUBEKit config files, pdbs and xmls are all in the respective run folder. Model protocols used are described in Table 1 of the paper.
 
 
 Each folder for training and testing contains:
