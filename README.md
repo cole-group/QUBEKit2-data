@@ -41,7 +41,7 @@ Next, ForceBalance requires a target folder, containing files for each molecule:
 
 For the targets, simply generate a standard liquid box with the desired number of molecules, and edit a data.csv file to contain the relevant values.
 
-These liquid boxes can be generated using QUBEBench. 
+These liquid boxes can be generated using [QUBEBench](https://github.com/qubekit/QUBEBench). 
 QUBEBench doesn't need to be installed, it can be run as a script.
 Simply run `python qubebench/run.py -csv <name>.csv` to create a csv with all molecules in the current working directory. 
 QUBEBench can then read this csv to either analyse the liquid properties:
