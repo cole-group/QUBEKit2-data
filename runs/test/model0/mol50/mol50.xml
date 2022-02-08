@@ -1,0 +1,198 @@
+<?xml version="1.0" ?>
+<ForceField>
+<AtomTypes>
+<Type class="0" element="C" mass="12.011" name="QUBE_0"/>
+<Type class="1" element="C" mass="12.011" name="QUBE_1"/>
+<Type class="2" element="C" mass="12.011" name="QUBE_2"/>
+<Type class="3" element="C" mass="12.011" name="QUBE_3"/>
+<Type class="4" element="C" mass="12.011" name="QUBE_4"/>
+<Type class="5" element="C" mass="12.011" name="QUBE_5"/>
+<Type class="6" element="N" mass="14.007" name="QUBE_6"/>
+<Type class="7" element="C" mass="12.011" name="QUBE_7"/>
+<Type class="8" element="H" mass="1.008" name="QUBE_8"/>
+<Type class="9" element="H" mass="1.008" name="QUBE_9"/>
+<Type class="10" element="H" mass="1.008" name="QUBE_10"/>
+<Type class="11" element="H" mass="1.008" name="QUBE_11"/>
+<Type class="12" element="H" mass="1.008" name="QUBE_12"/>
+<Type class="13" element="H" mass="1.008" name="QUBE_13"/>
+<Type class="14" element="H" mass="1.008" name="QUBE_14"/>
+<Type class="15" element="H" mass="1.008" name="QUBE_15"/>
+<Type class="16" element="H" mass="1.008" name="QUBE_16"/>
+<Type class="17" element="H" mass="1.008" name="QUBE_17"/>
+<Type class="18" element="H" mass="1.008" name="QUBE_18"/>
+</AtomTypes>
+<Residues>
+<Residue name="MOL">
+<Atom name="C1" type="QUBE_0"/>
+<Atom name="C2" type="QUBE_1"/>
+<Atom name="C3" type="QUBE_2"/>
+<Atom name="C4" type="QUBE_3"/>
+<Atom name="C5" type="QUBE_4"/>
+<Atom name="C6" type="QUBE_5"/>
+<Atom name="N1" type="QUBE_6"/>
+<Atom name="C7" type="QUBE_7"/>
+<Atom name="H1" type="QUBE_8"/>
+<Atom name="H2" type="QUBE_9"/>
+<Atom name="H3" type="QUBE_10"/>
+<Atom name="H4" type="QUBE_11"/>
+<Atom name="H5" type="QUBE_12"/>
+<Atom name="H6" type="QUBE_13"/>
+<Atom name="H7" type="QUBE_14"/>
+<Atom name="H8" type="QUBE_15"/>
+<Atom name="H9" type="QUBE_16"/>
+<Atom name="H10" type="QUBE_17"/>
+<Atom name="H11" type="QUBE_18"/>
+<Bond from="0" to="1"/>
+<Bond from="4" to="5"/>
+<Bond from="1" to="2"/>
+<Bond from="3" to="4"/>
+<Bond from="2" to="3"/>
+<Bond from="4" to="6"/>
+<Bond from="6" to="1"/>
+<Bond from="6" to="7"/>
+<Bond from="0" to="8"/>
+<Bond from="0" to="9"/>
+<Bond from="0" to="10"/>
+<Bond from="5" to="13"/>
+<Bond from="5" to="14"/>
+<Bond from="5" to="15"/>
+<Bond from="2" to="11"/>
+<Bond from="3" to="12"/>
+<Bond from="7" to="16"/>
+<Bond from="7" to="17"/>
+<Bond from="7" to="18"/>
+</Residue>
+</Residues>
+<HarmonicBondForce>
+<Bond class1="0" class2="1" k="231664.67516267148" length="0.14920459250453355"/>
+<Bond class1="4" class2="5" k="231664.67516267148" length="0.14920459250453355"/>
+<Bond class1="1" class2="2" k="372671.14276750816" length="0.13718330919149227"/>
+<Bond class1="3" class2="4" k="372671.14276750816" length="0.13718330919149227"/>
+<Bond class1="2" class2="3" k="281488.77350398933" length="0.14215657514546762"/>
+<Bond class1="4" class2="6" k="278029.8313217353" length="0.1378793295469033"/>
+<Bond class1="6" class2="1" k="278029.8313217353" length="0.1378793295469033"/>
+<Bond class1="6" class2="7" k="237023.3814143029" length="0.14454276409290823"/>
+<Bond class1="0" class2="8" k="291935.68777905306" length="0.10939103960467494"/>
+<Bond class1="0" class2="9" k="291935.68777905306" length="0.10939103960467494"/>
+<Bond class1="0" class2="10" k="291935.68777905306" length="0.10939103960467494"/>
+<Bond class1="5" class2="13" k="291935.68777905306" length="0.10939103960467494"/>
+<Bond class1="5" class2="14" k="291935.68777905306" length="0.10939103960467494"/>
+<Bond class1="5" class2="15" k="291935.68777905306" length="0.10939103960467494"/>
+<Bond class1="2" class2="11" k="331997.174698866" length="0.10797777096823258"/>
+<Bond class1="3" class2="12" k="331997.174698866" length="0.10797777096823258"/>
+<Bond class1="7" class2="16" k="298049.5921238404" length="0.10918925852065108"/>
+<Bond class1="7" class2="17" k="298049.5921238404" length="0.10918925852065108"/>
+<Bond class1="7" class2="18" k="298049.5921238404" length="0.10918925852065108"/>
+</HarmonicBondForce>
+<HarmonicAngleForce>
+<Angle angle="1.9413404952377737" class1="1" class2="0" class3="8" k="421.6150948682832"/>
+<Angle angle="1.9413404952377737" class1="1" class2="0" class3="9" k="421.6150948682832"/>
+<Angle angle="1.9413404952377737" class1="1" class2="0" class3="10" k="421.6150948682832"/>
+<Angle angle="1.9413404952377737" class1="4" class2="5" class3="13" k="421.6150948682832"/>
+<Angle angle="1.9413404952377737" class1="4" class2="5" class3="14" k="421.6150948682832"/>
+<Angle angle="1.9413404952377737" class1="4" class2="5" class3="15" k="421.6150948682832"/>
+<Angle angle="1.8788080246219045" class1="8" class2="0" class3="9" k="277.88270529998385"/>
+<Angle angle="1.8788080246219045" class1="8" class2="0" class3="10" k="277.88270529998385"/>
+<Angle angle="1.8788080246219045" class1="9" class2="0" class3="10" k="277.88270529998385"/>
+<Angle angle="1.8788080246219045" class1="13" class2="5" class3="14" k="277.88270529998385"/>
+<Angle angle="1.8788080246219045" class1="13" class2="5" class3="15" k="277.88270529998385"/>
+<Angle angle="1.8788080246219045" class1="14" class2="5" class3="15" k="277.88270529998385"/>
+<Angle angle="2.271293085672709" class1="0" class2="1" class3="2" k="867.2699931603472"/>
+<Angle angle="2.271293085672709" class1="3" class2="4" class3="5" k="867.2699931603472"/>
+<Angle angle="2.134570741529968" class1="0" class2="1" class3="6" k="881.5903755084943"/>
+<Angle angle="2.134570741529968" class1="5" class2="4" class3="6" k="881.5903755084943"/>
+<Angle angle="1.8773176948071124" class1="2" class2="1" class3="6" k="879.189045955638"/>
+<Angle angle="1.8773176948071124" class1="3" class2="4" class3="6" k="879.189045955638"/>
+<Angle angle="1.8787240687287774" class1="1" class2="2" class3="3" k="885.9879830861071"/>
+<Angle angle="1.8787240687287774" class1="2" class2="3" class3="4" k="885.9879830861071"/>
+<Angle angle="2.185906652943161" class1="1" class2="2" class3="11" k="389.3868106823372"/>
+<Angle angle="2.185906652943161" class1="4" class2="3" class3="12" k="389.3868106823372"/>
+<Angle angle="2.2185397896293155" class1="3" class2="2" class3="11" k="408.5213259920516"/>
+<Angle angle="2.2185397896293155" class1="2" class2="3" class3="12" k="408.5213259920516"/>
+<Angle angle="1.912604881213748" class1="1" class2="6" class3="4" k="964.4629927379441"/>
+<Angle angle="2.183274492529405" class1="1" class2="6" class3="7" k="927.9653190527338"/>
+<Angle angle="2.183274492529405" class1="4" class2="6" class3="7" k="927.9653190527338"/>
+<Angle angle="1.9284485230379957" class1="6" class2="7" class3="16" k="462.79862310873085"/>
+<Angle angle="1.9284485230379957" class1="6" class2="7" class3="17" k="462.79862310873085"/>
+<Angle angle="1.9284485230379957" class1="6" class2="7" class3="18" k="462.79862310873085"/>
+<Angle angle="1.892394567576135" class1="16" class2="7" class3="17" k="338.5716318098911"/>
+<Angle angle="1.892394567576135" class1="16" class2="7" class3="18" k="338.5716318098911"/>
+<Angle angle="1.892394567576135" class1="17" class2="7" class3="18" k="338.5716318098911"/>
+</HarmonicAngleForce>
+<PeriodicTorsionForce ordering="smirnoff">
+<Proper class1="0" class2="1" class3="2" class4="3" k1="0" k2="21.767750609806672" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Proper class1="0" class2="1" class3="2" class4="11" k1="0" k2="21.767750609806672" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Proper class1="0" class2="1" class3="6" class4="4" k1="0" k2="4.210311210365168" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Proper class1="0" class2="1" class3="6" class4="7" k1="0" k2="4.210311210365168" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Proper class1="1" class2="2" class3="3" class4="4" k1="0" k2="4.387824313701576" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Proper class1="1" class2="2" class3="3" class4="12" k1="0" k2="4.387824313701576" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Proper class1="1" class2="6" class3="4" class4="3" k1="0" k2="4.210311210365168" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Proper class1="1" class2="6" class3="4" class4="5" k1="0" k2="4.210311210365168" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Proper class1="1" class2="6" class3="7" class4="16" k1="0" k2="0.7802448648863632" k3="-0.19137745034585105" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="0.0" phase3="0.0" phase4="3.141592653589793"/>
+<Proper class1="1" class2="6" class3="7" class4="17" k1="0" k2="0.7802448648863632" k3="-0.19137745034585105" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="0.0" phase3="0.0" phase4="3.141592653589793"/>
+<Proper class1="1" class2="6" class3="7" class4="18" k1="0" k2="0.7802448648863632" k3="-0.19137745034585105" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="0.0" phase3="0.0" phase4="3.141592653589793"/>
+<Proper class1="2" class2="1" class3="0" class4="8" k1="0.07610890298855544" k2="0" k3="0.8017965096030952" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="3.141592653589793" phase4="3.141592653589793"/>
+<Proper class1="2" class2="1" class3="0" class4="9" k1="0.07610890298855544" k2="0" k3="0.8017965096030952" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="3.141592653589793" phase4="3.141592653589793"/>
+<Proper class1="2" class2="1" class3="0" class4="10" k1="0.07610890298855544" k2="0" k3="0.8017965096030952" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="3.141592653589793" phase4="3.141592653589793"/>
+<Proper class1="2" class2="1" class3="6" class4="4" k1="0" k2="4.210311210365168" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Proper class1="2" class2="1" class3="6" class4="7" k1="0" k2="4.210311210365168" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Proper class1="2" class2="3" class3="4" class4="5" k1="0" k2="21.767750609806672" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Proper class1="2" class2="3" class3="4" class4="6" k1="0" k2="21.767750609806672" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Proper class1="3" class2="2" class3="1" class4="6" k1="0" k2="21.767750609806672" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Proper class1="3" class2="4" class3="5" class4="13" k1="0.07610890298855544" k2="0" k3="0.8017965096030952" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="3.141592653589793" phase4="3.141592653589793"/>
+<Proper class1="3" class2="4" class3="5" class4="14" k1="0.07610890298855544" k2="0" k3="0.8017965096030952" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="3.141592653589793" phase4="3.141592653589793"/>
+<Proper class1="3" class2="4" class3="5" class4="15" k1="0.07610890298855544" k2="0" k3="0.8017965096030952" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0.0" phase2="3.141592653589793" phase3="3.141592653589793" phase4="3.141592653589793"/>
+<Proper class1="3" class2="4" class3="6" class4="7" k1="0" k2="4.210311210365168" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Proper class1="4" class2="3" class3="2" class4="11" k1="0" k2="4.387824313701576" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Proper class1="4" class2="6" class3="7" class4="16" k1="0" k2="0.7802448648863632" k3="-0.19137745034585105" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="0.0" phase3="0.0" phase4="3.141592653589793"/>
+<Proper class1="4" class2="6" class3="7" class4="17" k1="0" k2="0.7802448648863632" k3="-0.19137745034585105" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="0.0" phase3="0.0" phase4="3.141592653589793"/>
+<Proper class1="4" class2="6" class3="7" class4="18" k1="0" k2="0.7802448648863632" k3="-0.19137745034585105" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="0.0" phase3="0.0" phase4="3.141592653589793"/>
+<Proper class1="5" class2="4" class3="3" class4="12" k1="0" k2="21.767750609806672" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Proper class1="5" class2="4" class3="6" class4="7" k1="0" k2="4.210311210365168" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Proper class1="6" class2="1" class3="0" class4="8" k1="0" k2="0" k3="-0.93912285044788" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793"/>
+<Proper class1="6" class2="1" class3="0" class4="9" k1="0" k2="0" k3="-0.93912285044788" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793"/>
+<Proper class1="6" class2="1" class3="0" class4="10" k1="0" k2="0" k3="-0.93912285044788" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793"/>
+<Proper class1="6" class2="1" class3="2" class4="11" k1="0" k2="21.767750609806672" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Proper class1="6" class2="4" class3="3" class4="12" k1="0" k2="21.767750609806672" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Proper class1="6" class2="4" class3="5" class4="13" k1="0" k2="0" k3="-0.93912285044788" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793"/>
+<Proper class1="6" class2="4" class3="5" class4="14" k1="0" k2="0" k3="-0.93912285044788" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793"/>
+<Proper class1="6" class2="4" class3="5" class4="15" k1="0" k2="0" k3="-0.93912285044788" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0.0" phase4="3.141592653589793"/>
+<Proper class1="11" class2="2" class3="3" class4="12" k1="0" k2="4.387824313701576" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Improper class1="1" class2="0" class3="2" class4="6" k1="0" k2="1.5341333333333336" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Improper class1="1" class2="2" class3="6" class4="0" k1="0" k2="1.5341333333333336" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Improper class1="1" class2="6" class3="0" class4="2" k1="0" k2="1.5341333333333336" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Improper class1="2" class2="1" class3="3" class4="11" k1="0" k2="1.5341333333333336" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Improper class1="2" class2="3" class3="11" class4="1" k1="0" k2="1.5341333333333336" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Improper class1="2" class2="11" class3="1" class4="3" k1="0" k2="1.5341333333333336" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Improper class1="6" class2="1" class3="4" class4="7" k1="0" k2="14.644" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Improper class1="6" class2="4" class3="7" class4="1" k1="0" k2="14.644" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Improper class1="6" class2="7" class3="1" class4="4" k1="0" k2="14.644" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Improper class1="3" class2="2" class3="4" class4="12" k1="0" k2="1.5341333333333336" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Improper class1="3" class2="4" class3="12" class4="2" k1="0" k2="1.5341333333333336" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Improper class1="3" class2="12" class3="2" class4="4" k1="0" k2="1.5341333333333336" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Improper class1="4" class2="3" class3="5" class4="6" k1="0" k2="1.5341333333333336" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Improper class1="4" class2="5" class3="6" class4="3" k1="0" k2="1.5341333333333336" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+<Improper class1="4" class2="6" class3="3" class4="5" k1="0" k2="1.5341333333333336" k3="0" k4="0" periodicity1="1" periodicity2="2" periodicity3="3" periodicity4="4" phase1="0" phase2="3.141592653589793" phase3="0" phase4="3.141592653589793"/>
+</PeriodicTorsionForce>
+<NonbondedForce combination="amber" coulomb14scale="0.8333333333" lj14scale="0.5">
+<Atom charge="-0.409877" epsilon="0.4577296" sigma="0.3399669508423535" type="QUBE_0"/>
+<Atom charge="0.167165" epsilon="0.359824" sigma="0.3399669508423535" type="QUBE_1"/>
+<Atom charge="-0.302238" epsilon="0.359824" sigma="0.3399669508423535" type="QUBE_2"/>
+<Atom charge="-0.302238" epsilon="0.359824" sigma="0.3399669508423535" type="QUBE_3"/>
+<Atom charge="0.167165" epsilon="0.359824" sigma="0.3399669508423535" type="QUBE_4"/>
+<Atom charge="-0.409877" epsilon="0.4577296" sigma="0.3399669508423535" type="QUBE_5"/>
+<Atom charge="-0.048186" epsilon="0.7112800000000001" sigma="0.3249998523775958" type="QUBE_6"/>
+<Atom charge="-0.228822" epsilon="0.4577296" sigma="0.3399669508423535" type="QUBE_7"/>
+<Atom charge="0.128994" epsilon="0.06568879999999999" sigma="0.2649532787749369" type="QUBE_8"/>
+<Atom charge="0.128994" epsilon="0.06568879999999999" sigma="0.2649532787749369" type="QUBE_9"/>
+<Atom charge="0.128994" epsilon="0.06568879999999999" sigma="0.2649532787749369" type="QUBE_10"/>
+<Atom charge="0.122399" epsilon="0.06276" sigma="0.25996424595335105" type="QUBE_11"/>
+<Atom charge="0.122399" epsilon="0.06276" sigma="0.25996424595335105" type="QUBE_12"/>
+<Atom charge="0.128994" epsilon="0.06568879999999999" sigma="0.2649532787749369" type="QUBE_13"/>
+<Atom charge="0.128994" epsilon="0.06568879999999999" sigma="0.2649532787749369" type="QUBE_14"/>
+<Atom charge="0.128994" epsilon="0.06568879999999999" sigma="0.2649532787749369" type="QUBE_15"/>
+<Atom charge="0.116047" epsilon="0.06568879999999999" sigma="0.2471353044121301" type="QUBE_16"/>
+<Atom charge="0.116047" epsilon="0.06568879999999999" sigma="0.2471353044121301" type="QUBE_17"/>
+<Atom charge="0.116052" epsilon="0.06568879999999999" sigma="0.2471353044121301" type="QUBE_18"/>
+</NonbondedForce>
+</ForceField>

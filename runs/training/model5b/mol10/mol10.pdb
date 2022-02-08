@@ -1,0 +1,24 @@
+REMARK   1 CREATED WITH QUBEKit 2020-11-25 23:05:01.697781
+COMPND    mol10               
+HETATM    1  C0  UNL     1      -0.112   1.220  -0.094  1.00  0.00           C
+HETATM    2  C1  UNL     1       1.256   1.154  -0.102  1.00  0.00           C
+HETATM    3  C2  UNL     1       1.849  -0.100  -0.015  1.00  0.00           C
+HETATM    4  C3  UNL     1       1.123  -1.265   0.079  1.00  0.00           C
+HETATM    5  C4  UNL     1      -0.254  -1.156   0.084  1.00  0.00           C
+HETATM    6  C5  UNL     1      -0.878   0.079  -0.001  1.00  0.00           C
+HETATM    7  N6  UNL     1      -2.301   0.100   0.011  1.00  0.00           N
+HETATM    8  H7  UNL     1      -0.614   2.175  -0.160  1.00  0.00           H
+HETATM    9  H8  UNL     1       1.902   2.015  -0.172  1.00  0.00           H
+HETATM   10  H9  UNL     1       2.929  -0.187  -0.019  1.00  0.00           H
+HETATM   11 H10  UNL     1       1.601  -2.248   0.147  1.00  0.00           H
+HETATM   12 H11  UNL     1      -0.863  -2.046   0.156  1.00  0.00           H
+HETATM   13 H12  UNL     1      -2.749   0.690   0.754  1.00  0.00           H
+HETATM   14 H13  UNL     1      -2.890  -0.432  -0.667  1.00  0.00           H
+CONECT    1    2    6    8
+CONECT    2    1    3    9
+CONECT    6    1    5    7
+CONECT    3    2    4   10
+CONECT    4    3    5   11
+CONECT    5    4    6   12
+CONECT    7    6   13   14
+END
