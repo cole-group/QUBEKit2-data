@@ -1,0 +1,20 @@
+COMPND    flurobenzene
+HETATM    1  C1  UNL     1      -1.416  -0.132   0.014  1.00  0.00           C  
+HETATM    2  C2  UNL     1      -0.830   1.139  -0.005  1.00  0.00           C  
+HETATM    3  C3  UNL     1       0.562   1.278  -0.019  1.00  0.00           C  
+HETATM    4  C4  UNL     1       1.341   0.124  -0.014  1.00  0.00           C  
+HETATM    5  C5  UNL     1       0.788  -1.153   0.006  1.00  0.00           C  
+HETATM    6  C6  UNL     1      -0.606  -1.272   0.020  1.00  0.00           C  
+HETATM    7  F1  UNL     1       2.694   0.250  -0.027  1.00  0.00           F  
+HETATM    8  H1  UNL     1      -2.498  -0.232   0.025  1.00  0.00           H  
+HETATM    9  H2  UNL     1      -1.456   2.028  -0.009  1.00  0.00           H  
+HETATM   10  H3  UNL     1       1.041   2.252  -0.035  1.00  0.00           H  
+HETATM   11  H4  UNL     1       1.438  -2.022   0.009  1.00  0.00           H  
+HETATM   12  H5  UNL     1      -1.057  -2.261   0.035  1.00  0.00           H  
+CONECT    1    2    2    6    8
+CONECT    2    3    9
+CONECT    3    4    4   10
+CONECT    4    5    7
+CONECT    5    6    6   11
+CONECT    6   12
+END

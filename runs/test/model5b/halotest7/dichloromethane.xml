@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<ForceField>
+<QUBEKit Version="2.1.1+11.gaebfbb4.dirty" Date="2022_06_23"/>
+<AtomTypes>
+<Type name="QUBE_0" class="0" element="C" mass="12.011"/>
+<Type name="QUBE_1" class="1" element="Cl" mass="35.453"/>
+<Type name="QUBE_2" class="2" element="Cl" mass="35.453"/>
+<Type name="QUBE_3" class="3" element="H" mass="1.008"/>
+<Type name="QUBE_4" class="4" element="H" mass="1.008"/>
+</AtomTypes>
+<Residues>
+<Residue name="MOL">
+<Atom name="C1" type="QUBE_0"/>
+<Atom name="Cl1" type="QUBE_1"/>
+<Atom name="Cl2" type="QUBE_2"/>
+<Atom name="H1" type="QUBE_3"/>
+<Atom name="H2" type="QUBE_4"/>
+<Bond from="0" to="1"/>
+<Bond from="0" to="2"/>
+<Bond from="0" to="3"/>
+<Bond from="0" to="4"/>
+</Residue>
+</Residues>
+<HarmonicBondForce>
+<Bond length="0.17776004326937261" k="143759.16946252465" class1="0" class2="1"/>
+<Bond length="0.17776004326937261" k="143759.16946252465" class1="0" class2="2"/>
+<Bond length="0.10850727677943936" k="325204.2928612329" class1="0" class2="3"/>
+<Bond length="0.10850727677943936" k="325204.2928612329" class1="0" class2="4"/>
+</HarmonicBondForce>
+<HarmonicAngleForce>
+<Angle k="477.3942745608553" angle="1.9723852190659723" class1="1" class2="0" class3="2"/>
+<Angle k="374.47578657049957" angle="1.8859400311363324" class1="1" class2="0" class3="3"/>
+<Angle k="374.47578657049957" angle="1.8859400311363324" class1="1" class2="0" class3="4"/>
+<Angle k="374.47578657049957" angle="1.8859400311363324" class1="2" class2="0" class3="3"/>
+<Angle k="374.47578657049957" angle="1.8859400311363324" class1="2" class2="0" class3="4"/>
+<Angle k="268.01164500689157" angle="1.9488531707137293" class1="3" class2="0" class3="4"/>
+</HarmonicAngleForce>
+<NonbondedForce coulomb14scale="0.8333333333" lj14scale="0.5" combination="amber">
+<Atom charge="0.032522" epsilon="0.33255297150511254" sigma="0.334645242146979" type="QUBE_0"/>
+<Atom charge="-0.142269" epsilon="1.1993840869689925" sigma="0.33479586653851373" type="QUBE_1"/>
+<Atom charge="-0.142269" epsilon="1.1993840869689925" sigma="0.33479586653851373" type="QUBE_2"/>
+<Atom charge="0.126008" epsilon="0.08464879081414516" sigma="0.23712573804367057" type="QUBE_3"/>
+<Atom charge="0.126008" epsilon="0.08464879081414516" sigma="0.23712573804367057" type="QUBE_4"/>
+</NonbondedForce>
+</ForceField>
