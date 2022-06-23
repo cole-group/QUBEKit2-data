@@ -1,0 +1,12 @@
+COMPND    1,1-dichloroethane
+HETATM    1  C1  UNL     1      -0.830   0.010  -0.036  1.00  0.00           C  
+HETATM    2  C2  UNL     1       0.667  -0.059   0.150  1.00  0.00           C  
+HETATM    3 CL1  UNL     1       1.399   1.576   0.072  1.00  0.00          CL  
+HETATM    4 CL2  UNL     1       1.416  -1.137  -1.072  1.00  0.00          CL  
+HETATM    5  H1  UNL     1      -1.077   0.421  -1.016  1.00  0.00           H  
+HETATM    6  H2  UNL     1      -1.266   0.646   0.737  1.00  0.00           H  
+HETATM    7  H3  UNL     1      -1.255  -0.992   0.047  1.00  0.00           H  
+HETATM    8  H4  UNL     1       0.947  -0.465   1.118  1.00  0.00           H  
+CONECT    1    2    5    6    7
+CONECT    2    3    4    8
+END

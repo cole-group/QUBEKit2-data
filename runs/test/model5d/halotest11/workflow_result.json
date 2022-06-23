@@ -1,0 +1,1128 @@
+{
+  "version": "2.1.1+11.ga2c382f.dirty",
+  "creation_date": "2022_06_17",
+  "modified_date": "2022_06_17",
+  "input_molecule": {
+    "atoms": [
+      {
+        "atomic_number": 6,
+        "atom_index": 0,
+        "atom_name": "C1",
+        "formal_charge": 0,
+        "aromatic": false,
+        "stereochemistry": null,
+        "bonds": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "aim": {
+          "volume": null,
+          "charge": null,
+          "c8": null
+        },
+        "dipole": null,
+        "quadrupole": null,
+        "cloud_pen": null
+      },
+      {
+        "atomic_number": 35,
+        "atom_index": 1,
+        "atom_name": "Br1",
+        "formal_charge": 0,
+        "aromatic": false,
+        "stereochemistry": null,
+        "bonds": [
+          0
+        ],
+        "aim": {
+          "volume": null,
+          "charge": null,
+          "c8": null
+        },
+        "dipole": null,
+        "quadrupole": null,
+        "cloud_pen": null
+      },
+      {
+        "atomic_number": 35,
+        "atom_index": 2,
+        "atom_name": "Br2",
+        "formal_charge": 0,
+        "aromatic": false,
+        "stereochemistry": null,
+        "bonds": [
+          0
+        ],
+        "aim": {
+          "volume": null,
+          "charge": null,
+          "c8": null
+        },
+        "dipole": null,
+        "quadrupole": null,
+        "cloud_pen": null
+      },
+      {
+        "atomic_number": 1,
+        "atom_index": 3,
+        "atom_name": "H1",
+        "formal_charge": 0,
+        "aromatic": false,
+        "stereochemistry": null,
+        "bonds": [
+          0
+        ],
+        "aim": {
+          "volume": null,
+          "charge": null,
+          "c8": null
+        },
+        "dipole": null,
+        "quadrupole": null,
+        "cloud_pen": null
+      },
+      {
+        "atomic_number": 1,
+        "atom_index": 4,
+        "atom_name": "H2",
+        "formal_charge": 0,
+        "aromatic": false,
+        "stereochemistry": null,
+        "bonds": [
+          0
+        ],
+        "aim": {
+          "volume": null,
+          "charge": null,
+          "c8": null
+        },
+        "dipole": null,
+        "quadrupole": null,
+        "cloud_pen": null
+      }
+    ],
+    "bonds": [
+      {
+        "atom1_index": 0,
+        "atom2_index": 1,
+        "bond_order": 1.0,
+        "aromatic": false,
+        "stereochemistry": null
+      },
+      {
+        "atom1_index": 0,
+        "atom2_index": 2,
+        "bond_order": 1.0,
+        "aromatic": false,
+        "stereochemistry": null
+      },
+      {
+        "atom1_index": 0,
+        "atom2_index": 3,
+        "bond_order": 1.0,
+        "aromatic": false,
+        "stereochemistry": null
+      },
+      {
+        "atom1_index": 0,
+        "atom2_index": 4,
+        "bond_order": 1.0,
+        "aromatic": false,
+        "stereochemistry": null
+      }
+    ],
+    "coordinates": [
+      0.007464760905234899,
+      -0.18424682450278101,
+      0.0024841476275024353,
+      1.6176028780838092,
+      0.8731034597261246,
+      -0.06304181576907986,
+      -1.546582726319254,
+      0.957817574465646,
+      -0.030980444261784226,
+      -0.07068784562633076,
+      -0.8838739852181993,
+      -0.8662898040366932,
+      -0.007797067043459681,
+      -0.7628002244707907,
+      0.9578279164400554
+    ],
+    "multiplicity": 1,
+    "name": "dibromo_methane",
+    "provenance": {
+      "creator": "QUBEKit",
+      "version": "2.1.1+11.ga2c382f.dirty",
+      "routine": [
+        "QUBEKit.ligand.from_rdkit",
+        "QUBEKit.ligand.from_smiles",
+        "C(Br)Br"
+      ]
+    },
+    "extra_sites": {
+      "sites": {}
+    },
+    "BondForce": {
+      "type": "HarmonicBondForce",
+      "parameters": null
+    },
+    "AngleForce": {
+      "type": "HarmonicAngleForce",
+      "parameters": null
+    },
+    "TorsionForce": {
+      "type": "PeriodicTorsionForce",
+      "parameters": null,
+      "ordering": "default"
+    },
+    "ImproperTorsionForce": {
+      "type": "PeriodicImproperTorsionForce",
+      "parameters": null
+    },
+    "RBTorsionForce": {
+      "type": "RBProperTorsionForce",
+      "parameters": null
+    },
+    "ImproperRBTorsionForce": {
+      "type": "RBImproperTorsionForce",
+      "parameters": null
+    },
+    "NonbondedForce": {
+      "type": "NonbondedForce",
+      "parameters": null,
+      "coulomb14scale": 0.8333333333,
+      "lj14scale": 0.5,
+      "combination": "amber"
+    },
+    "chargemol_coords": null,
+    "hessian": null,
+    "qm_scans": null,
+    "wbo": null
+  },
+  "qc_spec": {
+    "program": "gaussian",
+    "basis": "DGDZVP",
+    "method": "b3lyp-d3bj",
+    "td_settings": null
+  },
+  "local_resources": {
+    "cores": 4,
+    "memory": 10
+  },
+  "current_molecule": {
+    "atoms": [
+      {
+        "atomic_number": 6,
+        "atom_index": 0,
+        "atom_name": "C1",
+        "formal_charge": 0,
+        "aromatic": false,
+        "stereochemistry": null,
+        "bonds": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "aim": {
+          "volume": 29.948144,
+          "charge": -0.045506,
+          "c8": null
+        },
+        "dipole": {
+          "x": 1e-05,
+          "y": -0.089819,
+          "z": -3e-05
+        },
+        "quadrupole": {
+          "q_xx": 0.015575666666666668,
+          "q_xy": 5e-06,
+          "q_xz": -1.3e-05,
+          "q_yz": 1e-06,
+          "q_yy": 0.010398666666666667,
+          "q_zz": -0.025974333333333335
+        },
+        "cloud_pen": {
+          "a": -0.610661,
+          "b": 1.811453
+        }
+      },
+      {
+        "atomic_number": 35,
+        "atom_index": 1,
+        "atom_name": "Br1",
+        "formal_charge": 0,
+        "aromatic": false,
+        "stereochemistry": null,
+        "bonds": [
+          0
+        ],
+        "aim": {
+          "volume": 96.283373,
+          "charge": -0.11773549999999999,
+          "c8": null
+        },
+        "dipole": {
+          "x": 0.006113,
+          "y": -0.033667,
+          "z": 3e-06
+        },
+        "quadrupole": {
+          "q_xx": 0.5789085,
+          "q_xy": -0.657571,
+          "q_xz": 1e-05,
+          "q_yz": -7e-06,
+          "q_yy": -0.05424449999999997,
+          "q_zz": -0.524664
+        },
+        "cloud_pen": {
+          "a": 3.26241,
+          "b": 2.346504
+        }
+      },
+      {
+        "atomic_number": 35,
+        "atom_index": 2,
+        "atom_name": "Br2",
+        "formal_charge": 0,
+        "aromatic": false,
+        "stereochemistry": null,
+        "bonds": [
+          0
+        ],
+        "aim": {
+          "volume": 96.283373,
+          "charge": -0.11773549999999999,
+          "c8": null
+        },
+        "dipole": {
+          "x": -0.006115,
+          "y": -0.033667,
+          "z": 2e-06
+        },
+        "quadrupole": {
+          "q_xx": 0.5789093333333333,
+          "q_xy": 0.657571,
+          "q_xz": -2e-06,
+          "q_yz": 2e-06,
+          "q_yy": -0.05424466666666666,
+          "q_zz": -0.5246646666666667
+        },
+        "cloud_pen": {
+          "a": 3.262415,
+          "b": 2.346504
+        }
+      },
+      {
+        "atomic_number": 1,
+        "atom_index": 3,
+        "atom_name": "H1",
+        "formal_charge": 0,
+        "aromatic": false,
+        "stereochemistry": null,
+        "bonds": [
+          0
+        ],
+        "aim": {
+          "volume": 3.3773739999999997,
+          "charge": 0.14048850000000002,
+          "c8": null
+        },
+        "dipole": {
+          "x": 3e-06,
+          "y": 0.029429,
+          "z": 0.051056
+        },
+        "quadrupole": {
+          "q_xx": -0.010375666666666667,
+          "q_xy": 0.0,
+          "q_xz": 3e-06,
+          "q_yz": 0.010001,
+          "q_yy": -0.0014216666666666666,
+          "q_zz": 0.011797333333333333
+        },
+        "cloud_pen": {
+          "a": -2.495283,
+          "b": 1.90396
+        }
+      },
+      {
+        "atomic_number": 1,
+        "atom_index": 4,
+        "atom_name": "H2",
+        "formal_charge": 0,
+        "aromatic": false,
+        "stereochemistry": null,
+        "bonds": [
+          0
+        ],
+        "aim": {
+          "volume": 3.3773739999999997,
+          "charge": 0.14048850000000002,
+          "c8": null
+        },
+        "dipole": {
+          "x": -1e-05,
+          "y": 0.029461,
+          "z": -0.051066
+        },
+        "quadrupole": {
+          "q_xx": -0.010376833333333333,
+          "q_xy": 2e-06,
+          "q_xz": 0.0,
+          "q_yz": -0.009991,
+          "q_yy": -0.001420833333333333,
+          "q_zz": 0.011797666666666666
+        },
+        "cloud_pen": {
+          "a": -2.500938,
+          "b": 1.902861
+        }
+      }
+    ],
+    "bonds": [
+      {
+        "atom1_index": 0,
+        "atom2_index": 1,
+        "bond_order": 1.0,
+        "aromatic": false,
+        "stereochemistry": null
+      },
+      {
+        "atom1_index": 0,
+        "atom2_index": 2,
+        "bond_order": 1.0,
+        "aromatic": false,
+        "stereochemistry": null
+      },
+      {
+        "atom1_index": 0,
+        "atom2_index": 3,
+        "bond_order": 1.0,
+        "aromatic": false,
+        "stereochemistry": null
+      },
+      {
+        "atom1_index": 0,
+        "atom2_index": 4,
+        "bond_order": 1.0,
+        "aromatic": false,
+        "stereochemistry": null
+      }
+    ],
+    "coordinates": [
+      -0.005905562901538351,
+      -0.18467699675934224,
+      0.01069859805133422,
+      1.6667736354387142,
+      0.8246312139566954,
+      -0.07583948299671428,
+      -1.6105846164061195,
+      0.932339164569014,
+      -0.02585107948746158,
+      -0.04055572355502874,
+      -0.8377431889875414,
+      -0.8549245897572416,
+      -0.00972773257602755,
+      -0.7345501980705956,
+      0.9459165541900832
+    ],
+    "multiplicity": 1,
+    "name": "dibromo_methane",
+    "provenance": {
+      "creator": "QUBEKit",
+      "version": "2.1.1+11.ga2c382f.dirty",
+      "routine": [
+        "QUBEKit.ligand.from_rdkit",
+        "QUBEKit.ligand.from_smiles",
+        "C(Br)Br"
+      ]
+    },
+    "extra_sites": {
+      "sites": {}
+    },
+    "BondForce": {
+      "type": "HarmonicBondForce",
+      "parameters": [
+        {
+          "type": "HarmonicBondParameter",
+          "attributes": [],
+          "parameter_eval": [],
+          "atoms": [
+            0,
+            1
+          ],
+          "length": 0.19555182756243344,
+          "k": 105814.61026855343
+        },
+        {
+          "type": "HarmonicBondParameter",
+          "attributes": [],
+          "parameter_eval": [],
+          "atoms": [
+            0,
+            2
+          ],
+          "length": 0.19555182756243344,
+          "k": 105814.61026855343
+        },
+        {
+          "type": "HarmonicBondParameter",
+          "attributes": [],
+          "parameter_eval": [],
+          "atoms": [
+            0,
+            3
+          ],
+          "length": 0.10848980044951612,
+          "k": 336415.65902125766
+        },
+        {
+          "type": "HarmonicBondParameter",
+          "attributes": [],
+          "parameter_eval": [],
+          "atoms": [
+            0,
+            4
+          ],
+          "length": 0.10848980044951612,
+          "k": 336415.65902125766
+        }
+      ]
+    },
+    "AngleForce": {
+      "type": "HarmonicAngleForce",
+      "parameters": [
+        {
+          "type": "HarmonicAngleParameter",
+          "attributes": [],
+          "parameter_eval": [],
+          "atoms": [
+            1,
+            0,
+            2
+          ],
+          "k": 373.0575253193109,
+          "angle": 1.9891472168725777
+        },
+        {
+          "type": "HarmonicAngleParameter",
+          "attributes": [],
+          "parameter_eval": [],
+          "atoms": [
+            1,
+            0,
+            3
+          ],
+          "k": 324.45767744866185,
+          "angle": 1.8783532158721736
+        },
+        {
+          "type": "HarmonicAngleParameter",
+          "attributes": [],
+          "parameter_eval": [],
+          "atoms": [
+            1,
+            0,
+            4
+          ],
+          "k": 324.45767744866185,
+          "angle": 1.8783532158721736
+        },
+        {
+          "type": "HarmonicAngleParameter",
+          "attributes": [],
+          "parameter_eval": [],
+          "atoms": [
+            2,
+            0,
+            3
+          ],
+          "k": 324.45767744866185,
+          "angle": 1.8783532158721736
+        },
+        {
+          "type": "HarmonicAngleParameter",
+          "attributes": [],
+          "parameter_eval": [],
+          "atoms": [
+            2,
+            0,
+            4
+          ],
+          "k": 324.45767744866185,
+          "angle": 1.8783532158721736
+        },
+        {
+          "type": "HarmonicAngleParameter",
+          "attributes": [],
+          "parameter_eval": [],
+          "atoms": [
+            3,
+            0,
+            4
+          ],
+          "k": 231.02948544935893,
+          "angle": 1.9633947159516607
+        }
+      ]
+    },
+    "TorsionForce": {
+      "type": "PeriodicTorsionForce",
+      "parameters": [],
+      "ordering": "smirnoff"
+    },
+    "ImproperTorsionForce": {
+      "type": "PeriodicImproperTorsionForce",
+      "parameters": []
+    },
+    "RBTorsionForce": {
+      "type": "RBProperTorsionForce",
+      "parameters": []
+    },
+    "ImproperRBTorsionForce": {
+      "type": "RBImproperTorsionForce",
+      "parameters": []
+    },
+    "NonbondedForce": {
+      "type": "NonbondedForce",
+      "parameters": [
+        {
+          "type": "LennardJones612",
+          "attributes": [],
+          "parameter_eval": [],
+          "atoms": [
+            0
+          ],
+          "charge": -0.045506,
+          "epsilon": 0.3441466963401048,
+          "sigma": 0.3375492553430759
+        },
+        {
+          "type": "LennardJones612",
+          "attributes": [],
+          "parameter_eval": [],
+          "atoms": [
+            1
+          ],
+          "charge": -0.117735,
+          "epsilon": 1.2713754145434493,
+          "sigma": 0.35065464746301717
+        },
+        {
+          "type": "LennardJones612",
+          "attributes": [],
+          "parameter_eval": [],
+          "atoms": [
+            2
+          ],
+          "charge": -0.117735,
+          "epsilon": 1.2713754145434493,
+          "sigma": 0.35065464746301717
+        },
+        {
+          "type": "LennardJones612",
+          "attributes": [],
+          "parameter_eval": [],
+          "atoms": [
+            3
+          ],
+          "charge": 0.140489,
+          "epsilon": 0.10227799242960296,
+          "sigma": 0.23781358525744922
+        },
+        {
+          "type": "LennardJones612",
+          "attributes": [],
+          "parameter_eval": [],
+          "atoms": [
+            4
+          ],
+          "charge": 0.140487,
+          "epsilon": 0.10227799242960296,
+          "sigma": 0.23781358525744922
+        }
+      ],
+      "coulomb14scale": 0.8333333333,
+      "lj14scale": 0.5,
+      "combination": "amber"
+    },
+    "chargemol_coords": [
+      1e-06,
+      0.940748,
+      -1e-06,
+      1.639754,
+      -0.124737,
+      -1e-06,
+      -1.639755,
+      -0.124736,
+      -0.0,
+      1.7e-05,
+      1.543497,
+      0.902049,
+      -1.4e-05,
+      1.543564,
+      -0.90201
+    ],
+    "hessian": [
+      0.210922202,
+      0.00630352772,
+      0.00631784278,
+      -0.075950901,
+      -0.0351061644,
+      0.0027043546,
+      -0.0703317853,
+      0.0359600354,
+      -0.00136887994,
+      -0.0324652075,
+      -0.00628083742,
+      -0.00807402724,
+      -0.0321743084,
+      -0.00087656125,
+      0.000420709803,
+      0.00630352772,
+      0.396425388,
+      0.0112779285,
+      -0.0538890977,
+      -0.0575842185,
+      0.00248368161,
+      0.0547489519,
+      -0.063411208,
+      0.0010349423,
+      -0.0061967739,
+      -0.153793072,
+      -0.144261523,
+      -0.000966608052,
+      -0.12163689,
+      0.129464971,
+      0.00631784278,
+      0.0112779285,
+      0.594727946,
+      0.0037812227,
+      0.00216424802,
+      -0.0299565405,
+      -0.0024426908,
+      0.00135464959,
+      -0.0298440513,
+      -0.00827647407,
+      -0.150270081,
+      -0.251214919,
+      0.000620099395,
+      0.135473254,
+      -0.283712435,
+      -0.075950901,
+      -0.0538890977,
+      0.0037812227,
+      0.127269328,
+      0.0663897957,
+      -0.00560156664,
+      -0.0294109835,
+      0.00152774648,
+      0.000457618398,
+      -0.0111223357,
+      -0.00695235777,
+      0.00394192652,
+      -0.0107851071,
+      -0.00707608672,
+      -0.00257920097,
+      -0.0351061644,
+      -0.0575842185,
+      0.00216424802,
+      0.0663897957,
+      0.0611804125,
+      -0.00367357224,
+      0.00101506555,
+      0.00944641373,
+      -0.000424486532,
+      -0.0168279974,
+      -0.00665541066,
+      0.00567951518,
+      -0.0154706994,
+      -0.00638719593,
+      -0.00374570442,
+      0.0027043546,
+      0.00248368161,
+      -0.0299565405,
+      -0.00560156664,
+      -0.00367357224,
+      0.0168300373,
+      0.000485606826,
+      -0.000433203566,
+      0.00237190102,
+      -0.0120166758,
+      -0.00628525965,
+      0.00569907898,
+      0.014428281,
+      0.00790835384,
+      0.0050555236,
+      -0.0703317853,
+      0.0547489519,
+      -0.0024426908,
+      -0.0294109835,
+      0.00101506555,
+      0.000485606826,
+      0.118659897,
+      -0.0702151743,
+      0.00227498766,
+      -0.00928862183,
+      0.00692030213,
+      -0.00310357729,
+      -0.00962850529,
+      0.00753085471,
+      0.00278567362,
+      0.0359600354,
+      -0.063411208,
+      0.00135464959,
+      0.00152774648,
+      0.00944641373,
+      -0.000433203566,
+      -0.0702151743,
+      0.0700892746,
+      -0.00191462799,
+      0.017180417,
+      -0.00823614979,
+      0.00538550935,
+      0.0155469755,
+      -0.00788832976,
+      -0.00439232738,
+      -0.00136887994,
+      0.0010349423,
+      -0.0298440513,
+      0.000457618398,
+      -0.000424486532,
+      0.00237190102,
+      0.00227498766,
+      -0.00191462799,
+      0.0166530585,
+      0.0120496046,
+      -0.00729861119,
+      0.00542462648,
+      -0.0134133307,
+      0.00860278341,
+      0.00539446494,
+      -0.0324652075,
+      -0.0061967739,
+      -0.00827647407,
+      -0.0111223357,
+      -0.0168279974,
+      -0.0120166758,
+      -0.00928862183,
+      0.017180417,
+      0.0120496046,
+      0.0502207495,
+      0.00573271892,
+      0.00805635483,
+      0.00265541552,
+      0.000111635412,
+      0.000187190434,
+      -0.00628083742,
+      -0.153793072,
+      -0.150270081,
+      -0.00695235777,
+      -0.00665541066,
+      -0.00628525965,
+      0.00692030213,
+      -0.00823614979,
+      -0.00729861119,
+      0.00573271892,
+      0.154771251,
+      0.150171126,
+      0.000580174142,
+      0.013913381,
+      0.0136828257,
+      -0.00807402724,
+      -0.144261523,
+      -0.251214919,
+      0.00394192652,
+      0.00567951518,
+      0.00569907898,
+      -0.00310357729,
+      0.00538550935,
+      0.00542462648,
+      0.00805635483,
+      0.150171126,
+      0.25469383,
+      -0.000820676817,
+      -0.0169746273,
+      -0.0146026162,
+      -0.0321743084,
+      -0.000966608052,
+      0.000620099395,
+      -0.0107851071,
+      -0.0154706994,
+      0.014428281,
+      -0.00962850529,
+      0.0155469755,
+      -0.0134133307,
+      0.00265541552,
+      0.000580174142,
+      -0.000820676817,
+      0.0499325053,
+      0.000310157847,
+      -0.000814372879,
+      -0.00087656125,
+      -0.12163689,
+      0.135473254,
+      -0.00707608672,
+      -0.00638719593,
+      0.00790835384,
+      0.00753085471,
+      -0.00788832976,
+      0.00860278341,
+      0.000111635412,
+      0.013913381,
+      -0.0169746273,
+      0.000310157847,
+      0.121999035,
+      -0.135009764,
+      0.000420709803,
+      0.129464971,
+      -0.283712435,
+      -0.00257920097,
+      -0.00374570442,
+      0.0050555236,
+      0.00278567362,
+      -0.00439232738,
+      0.00539446494,
+      0.000187190434,
+      0.0136828257,
+      -0.0146026162,
+      -0.000814372879,
+      -0.135009764,
+      0.287865063
+    ],
+    "qm_scans": [],
+    "wbo": [
+      0.0,
+      1.0256,
+      1.0256,
+      0.916,
+      0.916,
+      1.0256,
+      0.0,
+      0.0985,
+      0.0173,
+      0.0173,
+      1.0256,
+      0.0985,
+      0.0,
+      0.0173,
+      0.0173,
+      0.916,
+      0.0173,
+      0.0173,
+      0.0,
+      0.0001,
+      0.916,
+      0.0173,
+      0.0173,
+      0.0001,
+      0.0
+    ]
+  },
+  "results": {
+    "parametrisation": {
+      "stage": "OpenFF",
+      "stage_settings": {
+        "type": "OpenFF",
+        "force_field": "openff_unconstrained-2.0.0.offxml"
+      },
+      "status": "done",
+      "error": null
+    },
+    "optimisation": {
+      "stage": "Optimiser",
+      "stage_settings": {
+        "type": "Optimiser",
+        "pre_optimisation_method": "gfn2xtb",
+        "seed_conformers": 40,
+        "maxiter": 350,
+        "convergence_criteria": "GAU_TIGHT"
+      },
+      "status": "done",
+      "error": null
+    },
+    "hessian": {
+      "stage": "Hessian",
+      "stage_settings": {
+        "type": "Hessian"
+      },
+      "status": "done",
+      "error": null
+    },
+    "charges": {
+      "stage": "DDECCharges",
+      "stage_settings": {
+        "type": "DDECCharges",
+        "solvent_settings": {
+          "program": "gaussian",
+          "solver_type": "IPCM",
+          "epsilon": 4.0,
+          "volume_contour": 0.0004
+        },
+        "program": "gaussian",
+        "basis": null,
+        "method": null,
+        "td_settings": null,
+        "ddec_version": 6
+      },
+      "status": "done",
+      "error": null
+    },
+    "virtual_sites": {
+      "stage": "VirtualSites",
+      "stage_settings": {
+        "type": "VirtualSites",
+        "site_error_factor": 1.005,
+        "site_error_threshold": 1.0,
+        "freeze_site_angles": true,
+        "regularisation_epsilon": 0.0
+      },
+      "status": "done",
+      "error": null
+    },
+    "non_bonded": {
+      "stage": "LennardJones612",
+      "stage_settings": {
+        "type": "LennardJones612",
+        "lj_on_polar_h": true,
+        "free_parameters": {
+          "H": {
+            "v_free": 7.6,
+            "b_free": 6.5,
+            "r_free": 1.749
+          },
+          "X": {
+            "v_free": 7.6,
+            "b_free": 6.5,
+            "r_free": 1.447
+          },
+          "C": {
+            "v_free": 34.4,
+            "b_free": 46.6,
+            "r_free": 1.984
+          },
+          "N": {
+            "v_free": 25.9,
+            "b_free": 24.2,
+            "r_free": 1.717
+          },
+          "O": {
+            "v_free": 22.1,
+            "b_free": 15.6,
+            "r_free": 1.58
+          },
+          "F": {
+            "v_free": 18.2,
+            "b_free": 9.5,
+            "r_free": 1.628
+          },
+          "Cl": {
+            "v_free": 65.1,
+            "b_free": 94.6,
+            "r_free": 1.831
+          },
+          "Br": {
+            "v_free": 95.7,
+            "b_free": 162.0,
+            "r_free": 1.964
+          },
+          "S": {
+            "v_free": 75.2,
+            "b_free": 134.0,
+            "r_free": 1.983
+          }
+        },
+        "alpha": 1.0,
+        "beta": 0.0
+      },
+      "status": "done",
+      "error": null
+    },
+    "bonded_parameters": {
+      "stage": "ModSeminario",
+      "stage_settings": {
+        "type": "ModSeminario",
+        "vibrational_scaling": 1.0
+      },
+      "status": "done",
+      "error": null
+    },
+    "torsion_scanner": {
+      "stage": "TorsionScan1D",
+      "stage_settings": {
+        "type": "TorsionScan1D",
+        "special_torsions": [],
+        "default_scan_range": [
+          -165,
+          180
+        ],
+        "avoided_torsions": [
+          {
+            "smirks": "[*:1]-[CH3:2]"
+          },
+          {
+            "smirks": "[*:1]-[NH2:2]"
+          }
+        ],
+        "torsion_driver": {
+          "type": "torsiondriver",
+          "n_workers": 1,
+          "grid_spacing": 15,
+          "energy_decrease_thresh": null,
+          "energy_upper_limit": null,
+          "starting_conformations": 4
+        }
+      },
+      "status": "done",
+      "error": null
+    },
+    "torsion_optimisation": {
+      "stage": "ForceBalanceFitting",
+      "stage_settings": {
+        "type": "ForceBalanceFitting",
+        "penalty_type": "L1",
+        "job_type": "optimize",
+        "max_iterations": 10,
+        "convergence_step_criteria": 0.01,
+        "convergence_objective_criteria": 0.01,
+        "convergence_gradient_criteria": 0.01,
+        "n_criteria": 1,
+        "eig_lowerbound": 0.01,
+        "finite_difference_h": 0.01,
+        "penalty_additive": 0.1,
+        "constrain_charge": false,
+        "initial_trust_radius": -0.25,
+        "minimum_trust_radius": 0.05,
+        "error_tolerance": 1.0,
+        "adaptive_factor": 0.2,
+        "adaptive_damping": 1.0,
+        "normalize_weights": false,
+        "extras": {},
+        "priors": {
+          "Proper_k": 6.0
+        },
+        "targets": {
+          "TorsionProfile_OpenMM": {
+            "target_name": "TorsionProfile_OpenMM",
+            "description": "Relaxed energy and RMSD fitting for torsion drives only.",
+            "writelevel": 2,
+            "keywords": {
+              "pdb": "molecule.pdb",
+              "coords": "scan.xyz"
+            },
+            "openmm_platform": "Reference",
+            "energy_denom": 1.0,
+            "energy_upper": 10.0,
+            "attenuate": false,
+            "restrain_k": 1.0
+          }
+        }
+      },
+      "status": "done",
+      "error": null
+    }
+  }
+}

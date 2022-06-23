@@ -1,0 +1,8 @@
+COMPND    dichloromethane
+HETATM    1  C1  UNL     1      -0.006  -0.150   0.008  1.00  0.00           C  
+HETATM    2 CL1  UNL     1       1.526   0.776  -0.076  1.00  0.00          CL  
+HETATM    3 CL2  UNL     1      -1.463   0.892  -0.016  1.00  0.00          CL  
+HETATM    4  H1  UNL     1      -0.049  -0.808  -0.856  1.00  0.00           H  
+HETATM    5  H2  UNL     1      -0.009  -0.710   0.940  1.00  0.00           H  
+CONECT    1    2    3    4    5
+END

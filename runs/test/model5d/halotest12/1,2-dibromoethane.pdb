@@ -1,0 +1,13 @@
+COMPND    1,2-dibromoethane
+HETATM    1 BR1  UNL     1      -1.827  -0.288  -1.322  1.00  0.00          BR  
+HETATM    2  C1  UNL     1      -0.703   0.247   0.210  1.00  0.00           C  
+HETATM    3  C2  UNL     1       0.710  -0.283   0.119  1.00  0.00           C  
+HETATM    4 BR2  UNL     1       1.765   0.578  -1.311  1.00  0.00          BR  
+HETATM    5  H1  UNL     1      -0.735   1.334   0.249  1.00  0.00           H  
+HETATM    6  H2  UNL     1      -1.195  -0.171   1.091  1.00  0.00           H  
+HETATM    7  H3  UNL     1       1.245  -0.064   1.045  1.00  0.00           H  
+HETATM    8  H4  UNL     1       0.739  -1.353  -0.081  1.00  0.00           H  
+CONECT    1    2
+CONECT    2    3    5    6
+CONECT    3    4    7    8
+END

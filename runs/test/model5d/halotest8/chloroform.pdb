@@ -1,0 +1,8 @@
+COMPND    chloroform
+HETATM    1  C1  UNL     1       0.000  -0.003   0.107  1.00  0.00           C  
+HETATM    2 CL1  UNL     1      -0.905  -1.434  -0.469  1.00  0.00          CL  
+HETATM    3 CL2  UNL     1       1.702  -0.047  -0.440  1.00  0.00          CL  
+HETATM    4 CL3  UNL     1      -0.802   1.516  -0.390  1.00  0.00          CL  
+HETATM    5  H1  UNL     1       0.004  -0.032   1.192  1.00  0.00           H  
+CONECT    1    2    3    4    5
+END
